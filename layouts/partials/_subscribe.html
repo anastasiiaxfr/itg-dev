@@ -1,0 +1,24 @@
+<section class="section section_subscribe" id="subscribe">
+    <div class="container">
+
+        <figure class="subscribe">
+            <div class="subscribe__content">
+                <h3 class="subscribe__title">
+                    {{ .title }}
+                </h3>
+                <p class="subscribe__text">
+                    {{ .subtitle }}
+                </p>
+            </div>
+
+            <div class="subscribe__btn">
+                <span class="btn__label">{{ .btn_label }}</span>
+                <a href="{{ .btn_url | safeURL }}" class="btn">
+                    {{ .btn_title }}
+                </a>
+            </div>
+
+        </figure>
+
+    </div>
+</section>

@@ -1,0 +1,120 @@
+.btn
+	+flex(inline-flex, center, center, nowrap)
+	padding: 8px 36px
+	+theme(grey)
+	border: none
+	border-radius: $brs
+	text-align: center
+	+ft(16, 24, 500, $ffText)
+	transition: $trs
+
+	&:hover, &:focus, &:active, &:focus-visible
+		box-shadow: none
+
+	&_top
+		+ps(fixed, (r, 10px), (b, 10px))
+		+flex(flex, center, center, wrap)
+		+sz(40px, 40px)
+		+theme(dark2)
+		border: none
+		svg
+			fill: $black
+
+	&__label
+		+ft(12, 14, 300, $ffText2)
+
+	span
+		margin-right: 5px
+
+
+.lang-switcher
+	button
+		padding: 0
+		border: none
+		background: transparent
+		text-transform: uppercase
+		+ft(16, 24, 400)
+		svg
+			margin-right: 10px
+		&::after
+			display: none	
+	.dropdown-menu
+		min-width: 5rem
+		padding: 10px
+		button
+			&:hover, &:active, &:focus
+				font-weight: 500
+
+
+.search
+	width: auto
+	flex: 1
+
+	&-wrapper
+		position: relative
+
+	&-btns
+		+ps(absolute, (r, 40px), (t, 0), (b, 0))
+		z-index: 1
+		+flex(flex, center, center, nowrap)
+		margin: auto
+		gap: 13px
+
+		button
+			background: transparent
+			border: none
+			color: $grey5
+
+		span
+			display: inline-flex
+			+sz(1px, 50%)
+			background-color: $grey5
+
+	&-close
+		&:hover, &:active, &:focus
+			color: $black
+
+	&-box
+		width: 100%
+		padding: 15px 40px
+		padding-right: 130px 
+		+ft(16, 24, 400, $ffText)
+		letter-spacing: 0.1em
+		border: none
+		box-shadow: $bxsd1
+		background: rgba($white, 0.92)
+		border-radius: $brs3
+		
+	+maw($xs)
+		&-box
+			padding: 15px
+		.search-btn
+			display: none
+		.search-btns
+			right: 15px
+		span
+			display: none
+
+
+
+.soc
+	&--tm
+		width: auto
+		color: $grey5
+		a
+			+flex(flex, center, center, nowrap)
+			gap: $gap20
+			transition: $trs
+
+			&:hover, &:focus, &:active
+				color: $black
+		b
+			//max-width: 92px
+			+ft(16, 25, 600, $ffText)
+			text-align: left
+		span
+			display: inline-flex
+			+sz(1.5px, 35px)
+			background-color: $grey5
+		+maw($sm)
+			width: 100%

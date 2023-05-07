@@ -1,0 +1,31 @@
+<div class="breadcrumbs__wrap">
+
+	<ol class="breadcrumbs" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+	</ol>
+	{{ define "breadcrumbnav" }}
+
+	{{ $crumbs := slice }}
+	{{ $parent := .p1.Parent }}
+	{{ if $parent }}
+	{{ $crumbs = $crumbs | append $parent }}
+	{{ end }}
+
+	{{ range $i, $arr := $crumbs }}
+	{{ if not .IsHome }}
+	{{ template "breadcrumbnav" (dict "p1" $parent "p2" $.p2 ) }}
+	{{ end }}
+	{{ end }}
+
+
+	<li {{ if eq .p1 .p2 }} class="active" {{ end }} itemprop="itemListElement" itemscope="itemscope"
+		itemtype="http://schema.org/ListItem">
+		<a href="{{ .p1.Permalink | relURL }}" itemprop="item">
+			<span itemprop="name">
+				{{ .p1.Title | truncate 75 }}
+			</span>
+			<meta itemprop="position" content="1" />
+		</a>
+	</li>
+	{{ end }}
+</div>

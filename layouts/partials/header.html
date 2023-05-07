@@ -1,0 +1,18 @@
+<header>
+	<nav class="navbar navbar-expand-lg">
+		<div class="container">
+
+			{{ .Scratch.Set "logo_h" "62" }}
+			{{ .Scratch.Set "logo_w" "115" }}
+			{{ .Scratch.Set "logo_description" false }}
+			{{ .Scratch.Set "logo_mode" "white" }}
+
+			{{- partial "_logo.html" . -}}
+
+			<div class="navbar-btn">
+				{{- partial "_lang.html" . -}}
+				{{- partial "_btn-auth.html" . -}}
+			</div>
+		</div>
+	</nav>
+</header>

@@ -1,0 +1,35 @@
+h1, h2, h3, h4, h5, h6
+	font-family: $ffHeading
+
+
+h1, .h1
+	margin-bottom: $gap20
+	color: inherit
+	+ft(36, 49, 700, $ffHeading)
+
+	+maw($xs)
+		+ft(28, 28*1.3, 700, $ffHeading)
+   
+h2, .h2
+	+ft(24, 36, 600, $ffText)
+
+%h3
+	+ft(20, 20*1.3, 700, $ffHeading)
+	+maw($xsm)
+		+ft(17, 17*1.3, 600, $ffHeading)
+
+h4
+	+maw($xsm)
+		+ft(18, 18*1.3, 600, $ffHeading)
+
+%h4
+	+ft(16, 25, 700, $ffHeading)
+	+maw($xsm)
+		line-height: 1.3
+   
+.text
+	&__sub
+		margin-bottom: 0
+		+ft(16, 24, 400, $ffText)
+		letter-spacing: 0.1em
+	   

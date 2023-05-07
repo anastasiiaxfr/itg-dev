@@ -1,0 +1,61 @@
+<!-- Footer -->
+<!--Main Footer-->
+<footer class="footer" id="contacts">
+    <div class="container">
+        <div class="footer__top">
+            {{ .Scratch.Set "logo_mode" "dark" }}
+            {{ .Scratch.Set "logo_w" "115" }}
+            {{ .Scratch.Set "logo_h" "62" }}
+            {{ .Scratch.Set "logo_description" true }}
+
+            {{- partial "_logo.html" . -}}
+
+            <div class="footer__nav">
+                {{ range .Site.Menus.footer }}
+
+                <div class="col">
+
+                    {{ if .HasChildren }}
+                    <h4 class="footer__nav-title">
+                        {{ .Name }}
+                    </h4>
+                    <ul>
+                        {{ range .Children }}
+                        <li>
+                            <a href="{{ if eq .Pre "tel" }}tel:{{ .URL }}{{ else }} {{ .URL }} {{ end }}" target="{{ if in .URL "http" }}_blank{{ else }}_self{{ end }}">
+                                {{ if .Pre }}
+                                <svg class="icon" width="14" height="14">
+                                    <use xlink:href="#{{ .Pre }}"></use>
+                                  </svg>
+                                {{ end }}
+                                
+                                {{ .Name }}</a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                    {{ else }}
+                    <h5 class="footer__nav-title">
+                        {{ .Name }}
+                    </h5>
+                    {{ end }}
+
+
+                </div>
+
+                {{ end }}
+
+            </div>
+
+        </div>
+        <div class="footer__btm">
+            {{ .Site.Params.footer.copyright | markdownify }}
+        </div>
+    </div>
+</footer>
+<!--Main Footer-->
+
+{{ if .Site.Params.search }}
+<script>
+  var indexURL = {{ "index.json" | relURL}}
+</script>
+{{ end }}

@@ -1,0 +1,137 @@
+.logo
+    span
+        display: block
+        max-width: 125px
+        margin-top: 16px
+        text-transform: uppercase
+        +ft(14, 18, 500, $ffText)
+        letter-spacing: 0.05em
+    
+header
+    width: 100%
+    position: relative
+    margin: 0
+    +maw($xs)
+        .logo img
+            max-width: 100px
+
+.navbar
+    //+ps(absolute, (t, 0), (l, 0))
+    width: 100%
+    margin: 23px 0 
+    padding: 0
+    &-btn
+        +flex(flex, center, center, nowrap)
+        gap: 32px
+    +maw($xs)
+        margin-top: 10px
+        margin-bottom: 10px
+        &-btn
+            gap: 16px
+        .btn
+            padding: 10px 15px
+        .lang-btn span
+            display: none
+       
+  
+.footer
+    +theme(dark)
+    padding-top: 50px
+
+    .logo
+        +maw($lg)
+            width: 100%
+            text-align: center
+            img
+                margin-left: auto
+                margin-right: auto
+            span
+                max-width: 100%
+                text-align: center
+                white-space: nowrap
+
+    &__btm
+        padding-bottom: 40px
+        padding-top: 30px
+        text-align: center 
+        +ft(12, 14, 400, $ffText)  
+
+    &__top
+        +flex(flex, flex-start, space-between, wrap)  
+        +maw($lg)
+            justify-content: center
+
+    &__nav
+        display: grid
+        //grid-template-columns: repeat(auto-fill,minmax(20%,1fr))  
+        grid-template-columns: 1fr 1fr 1fr 1.2fr 1.3fr  
+        width: 80%
+        margin: 0 auto
+        margin-right: 15px
+        &-title
+            +ft(14, 14*1.3, 700, $ffText2)
+        ul
+            list-style-type: none
+            padding: 0
+        li 
+            a
+                +flex(flex, center, flex-start, nowrap)
+                +ft(14, 14*1.3, 400, $ffText2)
+                padding: 7px 0
+                gap: 12px
+            &:hover, &:focus, &:active
+                a
+                    color: inherit
+                    text-decoration: underline
+    +maw($lg)
+        &__nav
+            width: 100%
+            margin-top: 40px
+            margin-left: auto
+            margin-right: auto
+
+    +maw($md)
+        &__nav
+            //grid-template-columns: repeat(auto-fill,minmax(25%,1fr))
+        li a
+            +ft(12, 12*1.5, 400)
+
+    +maw($sm)
+        &__nav
+            grid-template-columns: 1fr 1fr 1fr
+            width: 100%
+            margin-right: auto
+
+    +maw($xs)
+        &__nav
+            grid-template-columns: 1fr 1fr
+        .col    
+            &:last-of-type
+                grid-column: 1/-1
+
+        li a
+            +ft(12, 12*1.5, 400)
+
+.breadcrumbs
+    padding: 0
+    margin: 0
+    li 
+        list-style-type: none
+        +flex(inline-flex, center, flex-start, wrap)
+        gap: $gap20
+        +ft(24, 36, 600, $ffText)
+        color: $grey3
+        +maw($xsm)
+            +ft(16, 16*1.3, 600, $ffText)
+
+        &:not(:last-of-type)
+            &::after
+                content: '/'
+                display: inline-flex
+                margin-right: $gap20
+
+        &.active
+            color: $grey
+            
+
+

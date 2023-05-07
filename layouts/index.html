@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ $data := index .Site.Data .Site.Language.Lang }}
+
+{{ if $data.homepage }}
+<style>
+</style>
+{{ end }}
+
+
+{{ "<!-- Hero Section -->" | safeHTML }}
+{{ "<!-- End of Hero Section -->" | safeHTML }}
+
+<article>
+    {{- partial "header.html" . -}}
+    {{- partial "_hero.html" . -}}
+</article>
+
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-1.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+<div class="row_1">
+    {{ $subscribe := $data.homepage.section_subscribe }}
+    {{- partial "_subscribe.html" (dict "title" $subscribe.title "subtitle" $subscribe.sub_title "btn_title" $subscribe.btn.title "btn_label" $subscribe.btn.label "btn_url" $subscribe.btn.url) -}}
+</div>
+<!-- END section -->
+
+{{ end }}
