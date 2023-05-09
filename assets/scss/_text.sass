@@ -1,35 +1,70 @@
 h1, h2, h3, h4, h5, h6
-	font-family: $ffHeading
+    font-family: $ffHeading
 
 
 h1, .h1
-	margin-bottom: $gap20
-	color: inherit
-	+ft(36, 49, 700, $ffHeading)
-
-	+maw($xs)
-		+ft(28, 28*1.3, 700, $ffHeading)
+    margin-bottom: $gap20
+    color: inherit
+    font-family: $ffHeading
+    font-size: 7vmax
+    line-height: 1.4
+    background: $grad
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    +miw($lg)
+        +ft(90, 90, 400, $ffHeading)
+    +maw($sm)
+        font-size: 300%
+    +maw($xsm)
+        +ft(36, 36, 400, $ffHeading)
+    +maw($xxs)
+        +ft(24, 24, 400, $ffHeading)
    
 h2, .h2
-	+ft(24, 36, 600, $ffText)
+    +ft(32, 48, 700, $ffText2)
 
 %h3
-	+ft(20, 20*1.3, 700, $ffHeading)
-	+maw($xsm)
-		+ft(17, 17*1.3, 600, $ffHeading)
+    +ft(20, 20*1.3, 700, $ffHeading)
+    +maw($xsm)
+        +ft(17, 17*1.3, 600, $ffHeading)
 
 h4
-	+maw($xsm)
-		+ft(18, 18*1.3, 600, $ffHeading)
+    +maw($xsm)
+        +ft(18, 18*1.3, 600, $ffHeading)
 
 %h4
-	+ft(16, 25, 700, $ffHeading)
-	+maw($xsm)
-		line-height: 1.3
+    +ft(16, 25, 700, $ffHeading)
+    +maw($xsm)
+        line-height: 1.3
    
 .text
-	&__sub
-		margin-bottom: 0
-		+ft(16, 24, 400, $ffText)
-		letter-spacing: 0.1em
-	   
+    &__sub
+        margin-top: 30px
+        margin-bottom: 80px
+        
+        +ft(24, 36, 400, $ffText)
+        letter-spacing: 0.1em
+
+        +maw($xsm)
+            +ft(20, 20*1.4, 400)
+        +maw($xs)
+            +ft(17, 17*1.4, 400)
+            margin-bottom: 30px
+       
+.hgroup
+    width: 100%
+    +flex(flex, center, space-between, nowrap)
+    overflow: hidden
+
+    & > :first-child
+        margin-bottom: 0
+        flex: 1 0 auto
+        width: auto
+
+    img
+        max-width: 100%
+        +maw($xsm)
+            display: none
+    +maw($xsm)
+        justify-content: center
+        text-align: center

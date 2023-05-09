@@ -1,0 +1,39 @@
+{{ $data := index .Site.Data .Site.Language.Lang }} {{ if
+$data.homepage.section_services }} {{ with $data.homepage.section_services }}
+
+<section class="section section_3" id="solutions">
+  <div class="container">
+    {{- partial "_hgroup.html" . -}}
+
+    <div class="card__wrap">
+      {{ range $i, $arr := .items }}
+      <div class="card {{ if le $i 0 }} active {{ end }}">
+        <img src="{{ .img | relURL }}" alt="{{ .title }}" class="card__img" />
+        <div class="card__content">
+          <div class="card__title">
+
+            {{ .title }}
+
+            <svg class="icon card__toggle" width="35" height="10">
+                <use xlink:href="#arr-r"></use>
+            </svg>
+
+          </div>
+          <div class="card__overlay">
+            <div class="card__subtitle">{{ .sub_title }}</div>
+            <div class="card__text">
+              <ol class="card__list">
+                {{ range .services }}
+                <li>{{ .item }}</li>
+                {{ end }}
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ end }} {{ end }}

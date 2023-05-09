@@ -5,8 +5,8 @@
 
 <section class="hero">
     <div class="container">
-        <div class="row">
-            <div class="col-xl-7 col-lg-10 mx-auto text-center">
+        <div class="row align-items-center">
+            <div class="mx-auto text-center">
 
                 <h1>
                     {{ .title }}
@@ -15,6 +15,15 @@
                 <p class="text__sub">
                     {{ .sub_title }}
                 </p>
+
+                <img src="{{ `../images/img1.png` }}" alt="{{ .Title }}" class="hero__img">
+
+
+                <a href="#benefits" class="hero__action">
+                    <svg class="icon" width="64" height="64">
+                        <use xlink:href="#arr-btm"></use>
+                    </svg>
+                </a>
 
             </div>
         </div>

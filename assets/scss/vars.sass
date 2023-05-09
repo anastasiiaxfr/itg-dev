@@ -2,22 +2,24 @@ $black: #000
 $white: #fff
 $dark: #171717
 
-$grey: #D9D9D9
-$grey2: #484848
-$grey3: #89898D
-$grey4: #37383B
-$grey5: #A0A0A0
-$grey6: #3C4043
-$grey7: #ebebeb
-$grey8: #A6A6A6
-$grey9: #323232
+$dark1: #111823
+$dark2: #15171D
+$dark3: #0D0D0D
+$dark4: #1E1E1E
 
-$pink: #F4E7FF
-$blue: #E8FDFB
-$blue1: #E6F4FD
-$blue2: #D3F7FF
+$blue: #40C6FF
+$blue1: #56FFEB
 
-$ffHeading: 'OpenSans'
+$grey: #89898D
+$grey1: #D9D9D9
+
+
+$grad: linear-gradient(109.2deg, #40C6FF -24.33%, #1A8AD7 7.43%, #56FFEB 103.53%)
+$grad1: linear-gradient(180deg, rgba(13, 13, 13, 0) 0%, #0D0D0D 176.82%)
+$grad2: linear-gradient(109.97deg, #40C6FF 0%, #1A8AD7 20.08%, #2809E4 47.88%, #56FFEB 80.83%)
+
+
+$ffHeading: 'StretchPro'
 $ffText: 'Poppins'
 $ffText2: 'Montserrat'
 $ffBack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
@@ -28,7 +30,7 @@ $md: 991
 $sm: 768
 $xsm: 520
 $xs: 480
-$xxs: 360
+$xxs: 380
 
 
 $trs: all 0.35s ease-in-out
@@ -39,13 +41,7 @@ $brs3: 15px
 
 $gap20: 20px
 
-$grad1: linear-gradient(275.45deg, rgba(86, 255, 235, 0.3) 5.22%, rgba(64, 198, 255, 0.3) 20.89%, rgba(126, 73, 243, 0.3) 36.76%, rgba(255, 255, 255, 0) 75.63%, rgba(40, 9, 228, 0.3) 97.8%)
 
-
-
-$bxsd: 0 0 1px 1px rgba(86, 255, 235, 0.3), 0 0 1px 1px rgba(64, 198, 255, 0.3), 0 0 1px 1px rgba(126, 73, 243, 0.3), 0 0 1px 1px rgba(255, 255, 255, 0), 0 0 1px 1px rgba(40, 9, 228, 0.3)    
-
-$bxsd1: 2px 4px 34px rgba(2, 4, 14, 0.05), inset 0px 4px 23px rgba(136, 156, 227, 0.05)	
 
 =ft($fz, $lh: 16, $fw: 400, $ff: $ffText)
 	$lh: $lh/$fz
@@ -56,32 +52,27 @@ $bxsd1: 2px 4px 34px rgba(2, 4, 14, 0.05), inset 0px 4px 23px rgba(136, 156, 227
 
 =theme($theme)
 	@if $theme == dark
-		background-color: $dark
-		color: $grey
+		background-color: $dark4
+		color: $grey1
+
+		.btn
+			background-color: $white
+
+		.text__sub
+			color: $grey
 
 		*::selection
 			background-color: rgba($white, 0.1)
+
+	@if $theme == dark2
+		background-color: $dark1
+		color: $grey1
 
 	@if $theme == white
 		background-color: $white
 		color: $black
 
-		.text__sub
-			color: $grey2
 
-
-	@if $theme == grey
-		background-color: rgba($black, 0.07)
-		backdrop-filter: blur(5.5px)
-		color: $black
-		&:hover, &:active, &:focus
-			background-color: rgba($black, 0.1)
-
-	@if $theme == blue
-		background-color: $blue2
-		color: $grey4
-		&:hover, &:active, &:focus
-			background-color: darken($blue2, 5%)
 
 
 =sz($w, $h)
@@ -228,23 +219,21 @@ $i: 0
 // +rfz(1120, 320, 12, 40)
 
 
-%card
-	border: none
-	background: rgba($white, 0.92)
-	box-shadow: 2px 4px 34px rgba(2, 4, 14, 0.05), inset 0px 4px 23px rgba(136, 156, 227, 0.05)
-	border-radius: 15px
+@keyframes toBtm 
+	0%
+		transform: translateY(0px)
+	50%
+		transform: translateY(10px)
 
-	*::selection
-		background-color: lighten($grey7, 5%)
 
 %mask
-	mask: $grad1
+	mask: linear-gradient($white 0 0) content-box,linear-gradient($white 0 0)
 	mask-composite: exclude
-	-webkit-mask: $grad1
+	-webkit-mask: linear-gradient($white 0 0) content-box,linear-gradient($white 0 0)
 	-webkit-mask-composite: xor
 	content: ""
 	position: absolute
-	z-index: 0
+	z-index: -1
 	inset: 0
 	padding: 2px
-
+	background: $grad2

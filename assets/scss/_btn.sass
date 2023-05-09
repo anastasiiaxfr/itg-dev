@@ -28,79 +28,31 @@
 
 
 .lang-switcher
+	color: $white
 	button
 		padding: 0
 		border: none
 		background: transparent
 		text-transform: uppercase
 		+ft(16, 24, 400)
+		color: inherit
 		svg
 			margin-right: 10px
 		&::after
 			display: none	
 	.dropdown-menu
 		min-width: 5rem
-		padding: 10px
+		margin-top: 5px
+		padding: 5px 10px
 		button
 			&:hover, &:active, &:focus
 				font-weight: 500
 
 
-.search
-	width: auto
-	flex: 1
-
-	&-wrapper
-		position: relative
-
-	&-btns
-		+ps(absolute, (r, 40px), (t, 0), (b, 0))
-		z-index: 1
-		+flex(flex, center, center, nowrap)
-		margin: auto
-		gap: 13px
-
-		button
-			background: transparent
-			border: none
-			color: $grey5
-
-		span
-			display: inline-flex
-			+sz(1px, 50%)
-			background-color: $grey5
-
-	&-close
-		&:hover, &:active, &:focus
-			color: $black
-
-	&-box
-		width: 100%
-		padding: 15px 40px
-		padding-right: 130px 
-		+ft(16, 24, 400, $ffText)
-		letter-spacing: 0.1em
-		border: none
-		box-shadow: $bxsd1
-		background: rgba($white, 0.92)
-		border-radius: $brs3
-		
-	+maw($xs)
-		&-box
-			padding: 15px
-		.search-btn
-			display: none
-		.search-btns
-			right: 15px
-		span
-			display: none
-
-
-
 .soc
 	&--tm
 		width: auto
-		color: $grey5
+	
 		a
 			+flex(flex, center, center, nowrap)
 			gap: $gap20
@@ -108,13 +60,4 @@
 
 			&:hover, &:focus, &:active
 				color: $black
-		b
-			//max-width: 92px
-			+ft(16, 25, 600, $ffText)
-			text-align: left
-		span
-			display: inline-flex
-			+sz(1.5px, 35px)
-			background-color: $grey5
-		+maw($sm)
-			width: 100%
+		

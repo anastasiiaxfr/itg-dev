@@ -1,7 +1,7 @@
 baseURL = "/"
 # canonifyURLs = true
-defaultContentLanguage = "en"
-disableLanguages = ["ua"]
+defaultContentLanguage = "ua"
+disableLanguages = ["ru"]
 paginate = "6"
 relativeURLs = true
 summaryLength = "50"
@@ -21,7 +21,7 @@ weight = 2
 [Languages.ua]
 contentDir = "content/ua"
 home = "Головна"
-languageCode = "ua"
+languageCode = "uk"
 languageName = "Укр"
 weight = 3
 [Languages.en]
@@ -30,6 +30,7 @@ home = "Home"
 languageCode = "en"
 languageName = "ENG"
 weight = 1
+
 
 
 [outputs]
@@ -188,17 +189,17 @@ identifier = "product"
 hasChildren = true
     [[menu.footer]]
     parent = "product"
-    name = "Epicurus"
-    URL = "https://itg-epicurus.netlify.app/"
+    name = "ITG main"
+    URL = "https://itg-main.netlify.app/"
     weight = 1
     [[menu.footer]]
     parent = "product"
-    name = "ITG Development"
-    URL = "#"
+    name = "Epicurus"
+    URL = "https://itg-epicurus.netlify.app/"
     weight = 2
     [[menu.footer]]
     parent = "product"
-    name = "ITG News Investing"
+    name = "ITG News"
     URL = "https://itg-news-group.netlify.app/"
     weight = 3
 
@@ -217,11 +218,6 @@ hasChildren = true
     name = "Wiki"
     URL = "/wiki"
     weight = 2
-    [[menu.footer]]
-    parent = "resources"
-    name = "Site map"
-    URL = "/site-map"
-    weight = 3
 
 [[menu.footer]]
 name = "Documentation"
@@ -241,7 +237,7 @@ hasChildren = true
     [[menu.footer]]
     parent = "documentation"
     name = "Terms of use"
-    URL = "terms-of-use"
+    URL = "/terms-of-use"
     weight = 3
     [[menu.footer]]
     parent = "documentation"

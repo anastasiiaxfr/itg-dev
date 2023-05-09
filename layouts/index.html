@@ -10,7 +10,7 @@
 {{ "<!-- Hero Section -->" | safeHTML }}
 {{ "<!-- End of Hero Section -->" | safeHTML }}
 
-<article>
+<article class="hero__wrap">
     {{- partial "header.html" . -}}
     {{- partial "_hero.html" . -}}
 </article>
@@ -21,10 +21,31 @@
 <!-- END section -->
 
 <!-- BEGIN section -->
-<div class="row_1">
-    {{ $subscribe := $data.homepage.section_subscribe }}
-    {{- partial "_subscribe.html" (dict "title" $subscribe.title "subtitle" $subscribe.sub_title "btn_title" $subscribe.btn.title "btn_label" $subscribe.btn.label "btn_url" $subscribe.btn.url) -}}
-</div>
+{{- partial "_home-sec-2.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-3.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-4.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-5.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-6.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-7.html" . -}}
+<!-- END section -->
+
+<!-- BEGIN section -->
+{{- partial "_home-sec-8.html" . -}}
 <!-- END section -->
 
 {{ end }}

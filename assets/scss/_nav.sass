@@ -1,15 +1,7 @@
-.logo
-    span
-        display: block
-        max-width: 125px
-        margin-top: 16px
-        text-transform: uppercase
-        +ft(14, 18, 500, $ffText)
-        letter-spacing: 0.05em
-    
 header
     width: 100%
     position: relative
+    z-index: 100500 - 1
     margin: 0
     +maw($xs)
         .logo img
@@ -18,8 +10,7 @@ header
 .navbar
     //+ps(absolute, (t, 0), (l, 0))
     width: 100%
-    margin: 23px 0 
-    padding: 0
+    padding: 23px 0
     &-btn
         +flex(flex, center, center, nowrap)
         gap: 32px
@@ -30,13 +21,59 @@ header
             gap: 16px
         .btn
             padding: 10px 15px
+
+            span
+                display: none
+                
         .lang-btn span
             display: none
-       
-  
+
+
+.hero
+    margin-top: 185px
+    +maw($md)
+        margin-top: 15%
+
+    img
+        max-width: 100%
+
+    &__action
+        +ps(absolute, (b, 35px), (l, 0), (r, 0))
+        display: block
+        margin-left: auto
+        margin-right: auto
+        z-index: 100500 - 1
+        
+        svg
+            animation: toBtm infinite ease-in-out 1.5s
+
+    &__wrap
+        position: relative
+        background-image: url(../images/bg1.svg), url(../images/bg-hero.svg) 
+        background-size: cover, 70%
+        background-repeat: no-repeat
+        background-position: 100% 0, 50%
+        background-attachment: fixed
+
+        &:hover
+            &::after
+                opacity: 0
+
+        &::after
+            content: ''
+            +ps(absolute, (b, 0), (l, 0))
+            +sz(100%, 100%)
+            background: linear-gradient(0, $dark3 -10%, transparent 50%)
+            transition: $trs
+
+
+
+
+
 .footer
-    +theme(dark)
+    +theme(dark2)
     padding-top: 50px
+    padding-bottom: 50px
 
     .logo
         +maw($lg)
@@ -51,7 +88,6 @@ header
                 white-space: nowrap
 
     &__btm
-        padding-bottom: 40px
         padding-top: 30px
         text-align: center 
         +ft(12, 14, 400, $ffText)  
@@ -111,27 +147,3 @@ header
 
         li a
             +ft(12, 12*1.5, 400)
-
-.breadcrumbs
-    padding: 0
-    margin: 0
-    li 
-        list-style-type: none
-        +flex(inline-flex, center, flex-start, wrap)
-        gap: $gap20
-        +ft(24, 36, 600, $ffText)
-        color: $grey3
-        +maw($xsm)
-            +ft(16, 16*1.3, 600, $ffText)
-
-        &:not(:last-of-type)
-            &::after
-                content: '/'
-                display: inline-flex
-                margin-right: $gap20
-
-        &.active
-            color: $grey
-            
-
-
