@@ -73,3 +73,19 @@ section_services:
         - item: 'Разработка функционала: команда разработчиков напишет код для создания функционала, который был определен на предыдущем этапе.'
         - item: 'Тестирование: после создания приложения, оно будет протестировано на различных устройствах и операционных системах, чтобы убедиться, что оно работает корректно.'
         - item: 'Развертывание и поддержка: приложение будет развернуто в магазинах приложений, таких как Google Play и App Store, и будет поддерживаться в дальнейшем.'
+
+section_about:
+  enable: true
+  title: About us
+  items:
+    - title: 25
+      description: WORKERS
+  
+    - title: 50
+      description: COMPLETED PROJECTS
+      
+    - title: 3 800
+      description: HOURS WORKED
+
+    - title: 28
+      description: HAPPY CLIENTS

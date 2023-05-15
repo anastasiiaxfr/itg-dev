@@ -1,21 +1,19 @@
-<svg width="641" height="3" viewBox="0 0 641 3" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g opacity="0.2">
-<line x1="141.254" y1="1.60938" x2="610.5" y2="1.60933" stroke="url(#paint0_linear_1_3874)" stroke-width="2"/>
-<line x1="615.5" y1="1.60938" x2="630.5" y2="1.60938" stroke="url(#paint1_linear_1_3874)" stroke-width="2"/>
-<line x1="635.5" y1="1.60938" x2="640.5" y2="1.60938" stroke="url(#paint2_linear_1_3874)" stroke-width="2"/>
-</g>
+<svg width="500" height="2" viewBox="0 0 500 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="0.253906" y1="1" x2="469.5" y2="0.999959" stroke="url(#paint0_linear_133_2270)" stroke-width="2"/>
+<line x1="474.5" y1="1" x2="489.5" y2="1" stroke="url(#paint1_linear_133_2270)" stroke-width="2"/>
+<line x1="494.5" y1="1" x2="499.5" y2="1" stroke="url(#paint2_linear_133_2270)" stroke-width="2"/>
 <defs>
-<linearGradient id="paint0_linear_1_3874" x1="-94.4162" y1="3.1094" x2="-94.3792" y2="9.16257" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_133_2270" x1="-235.416" y1="2.50002" x2="-235.379" y2="8.5532" gradientUnits="userSpaceOnUse">
 <stop stop-color="#40C6FF"/>
 <stop offset="0.203119" stop-color="#1A8AD7"/>
 <stop offset="0.817714" stop-color="#56FFEB"/>
 </linearGradient>
-<linearGradient id="paint1_linear_1_3874" x1="607.967" y1="3.10937" x2="609.084" y2="8.94881" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_133_2270" x1="466.967" y1="2.5" x2="468.084" y2="8.33944" gradientUnits="userSpaceOnUse">
 <stop stop-color="#40C6FF"/>
 <stop offset="0.203119" stop-color="#1A8AD7"/>
 <stop offset="0.817714" stop-color="#56FFEB"/>
 </linearGradient>
-<linearGradient id="paint2_linear_1_3874" x1="632.989" y1="3.10937" x2="635.603" y2="7.66158" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint2_linear_133_2270" x1="491.989" y1="2.5" x2="494.603" y2="7.0522" gradientUnits="userSpaceOnUse">
 <stop stop-color="#40C6FF"/>
 <stop offset="0.203119" stop-color="#1A8AD7"/>
 <stop offset="0.817714" stop-color="#56FFEB"/>

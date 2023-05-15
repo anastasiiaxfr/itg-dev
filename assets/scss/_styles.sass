@@ -1,234 +1,290 @@
 body
-    +theme(dark)
+	+theme(dark)
 
-    background-image: url('../images/bg-base.svg')
-    background-repeat: no-repeat
-    background-size: 100vmax
-    background-position: center top
-    font-family: $ffText2
+	background-image: url('../images/bg-base.svg')
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: center top
+	font-family: $ffText2
 
 
 a
-    font-family: inherit
-    &:hover, &:focus, &:active, &:focus-visible
-        color: inherit
-        outline: none
-        appearance: none
-        box-shadow: none
+	font-family: inherit
+	&:hover, &:focus, &:active, &:focus-visible
+		color: inherit
+		outline: none
+		appearance: none
+		box-shadow: none
 
 
 .page
-    &__wrapper
-        overflow: hidden
+	&__wrapper
+		overflow: hidden
 
 
 .section
-    &_1, &_3
-        margin-top: 75px
-        margin-bottom: 75px
-        //background: url('../images/bg2.svg') no-repeat 50%/cover
-        +maw($xs)
-            margin-top: 30px
-            margin-bottom: 30px
-        
+	&_1, &_3, &_5
+		margin-top: 75px
+		margin-bottom: 75px
+		//background: url('../images/bg2.svg') no-repeat 50%/cover
+		+maw($xs)
+			margin-top: 30px
+			margin-bottom: 30px
+		
 
 .box
-    +flex(flex, center, flex-start, nowrap)
-    position: relative
-    margin: 0
+	+flex(flex, center, flex-start, nowrap)
+	position: relative
+	margin: 0
 
-    &:hover
-        .box__img
-            &::after
-                opacity: 0
+	&:hover
+		.box__img
+			&::after
+				opacity: 0
 
-    &__img
-        position: relative
-        +sz(220px, 220px)
+	&__img
+		position: relative
+		+sz(220px, 220px)
 
-        &::after
-            content: ''
-            +ps(absolute, (l, 0), (r, 0), (t, 0), (b, 0))
-            margin: auto
-            display: block
-            //+sz(100%, 100%)
-            background: url('../images/bg10.svg') no-repeat 0 50%/120%
-            opacity: 0.8
-            transition: $trs
+		&::after
+			content: ''
+			+ps(absolute, (l, 0), (r, 0), (t, 0), (b, 0))
+			margin: auto
+			display: block
+			//+sz(100%, 100%)
+			background: url('../images/bg10.svg') no-repeat 0 50%/120%
+			opacity: 0.8
+			transition: $trs
 
-        img
-            display: block
-            +sz(100%, 100%)
-            object-fit: contain
+		img
+			display: block
+			+sz(100%, 100%)
+			object-fit: contain
 
-    &__title
-        margin-bottom: 16px
-        +ft(24, 24, 400, $ffHeading)
-        color: $blue
+	&__title
+		margin-bottom: 16px
+		+ft(24, 24, 400, $ffHeading)
+		color: $blue
 
-    &__text
-        +ft(16, 25, 600, $ffText)
-        color: $grey
+	&__text
+		+ft(16, 25, 600, $ffText)
+		color: $grey
 
-    &__wrap
-        display: grid
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
-        gap: 20px
-        justify-content: center
-        margin-top: 60px
-        +maw($xsm)
-            margin-top: 30px
-            gap: 0
-       
+	&__wrap
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+		gap: 20px
+		justify-content: center
+		margin-top: 60px
+		+maw($xsm)
+			margin-top: 30px
+			gap: 0
+	   
 
 .card
-    position: relative
-    background-color: transparent
-    border-radius: 15px
-    overflow: hidden
+	position: relative
+	background-color: transparent
+	border-radius: 15px
+	overflow: hidden
 
-    background-repeat: no-repeat
-    background-size: cover
-    background-position: 50%
-    background-image: url(../images/bg6.svg) 
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: 50%
+	background-image: url(../images/bg6.svg) 
 
-    transition: $trs
+	transition: $trs
 
-    &.active, &:hover
-        &::after
-            @extend %mask
-            border-radius: 15px
-        
-    &:nth-child(1)
-        grid-row-start: 1
-        grid-row-end: 3
-        border-radius: 30px
-        background-image: url(../images/bg7.svg) 
+	&.active, &:hover
+		&::after
+			@extend %mask
+			border-radius: 15px
+		
+	&:nth-child(1)
+		grid-row-start: 1
+		grid-row-end: 3
+		border-radius: 30px
+		background-image: url(../images/bg7.svg) 
 
-        &::after
-            border-radius: 30px
+		&::after
+			border-radius: 30px
 
-        .card__content
-            padding: 45px 50px
+		.card__content
+			padding: 45px 50px
 
-        &:hover
-            .card
-                &__toggle
-                    transition: $trs
-                    opacity: 1
-                    cursor: pointer
-                &__overlay
-                    opacity: 1
-                    transition: $trs
-                &__img
-                    opacity: 0
-                    transition: $trs
-            
+		&:hover
+			.card
+				&__toggle
+					transition: $trs
+					opacity: 1
+					cursor: pointer
+				&__overlay
+					opacity: 1
+					transition: $trs
+				&__img
+					opacity: 0
+					transition: $trs
+			
 
-    &:nth-child(2)
-        grid-column: 2
-        grid-row: 1
-        background-image: url(../images/bg4.svg) 
-    &:nth-child(3)
-        grid-column: 3
-        grid-row: 1
-        background-image: url(../images/bg3.svg) 
-    &:nth-child(4)
-        grid-column: 2
-        grid-row: 2
-        background-image: url(../images/bg6.svg) 
-    &:nth-child(5)
-        grid-row: 2    
-        grid-column: 3  
-        background-image: url(../images/bg5.svg)       
+	&:nth-child(2)
+		grid-column: 2
+		grid-row: 1
+		background-image: url(../images/bg4.svg) 
+	&:nth-child(3)
+		grid-column: 3
+		grid-row: 1
+		background-image: url(../images/bg3.svg) 
+	&:nth-child(4)
+		grid-column: 2
+		grid-row: 2
+		background-image: url(../images/bg6.svg) 
+	&:nth-child(5)
+		grid-row: 2    
+		grid-column: 3  
+		background-image: url(../images/bg5.svg)       
 
-    &__content
-        +ps(absolute, (t, 0), (l, 0))
-        +sz(100%, 100%)
-        padding: 20px 30px
+	&__content
+		+ps(absolute, (t, 0), (l, 0))
+		+sz(100%, 100%)
+		padding: 20px 30px
 
-        overflow: hidden
-        
-    &__overlay
-        overflow: hidden
-        opacity: 0
+		overflow: hidden
+		
+	&__overlay
+		overflow: hidden
+		opacity: 0
 
-        +maw($md)
-            display: none
+		+maw($md)
+			display: none
 
-    &__img
-        margin-top: auto
-        margin-bottom: 0
-     
+	&__img
+		margin-top: auto
+		margin-bottom: 0
+	 
 
-    &__title
-        +flex(flex, center, space-between, nowrap)
-        +ft(32, 48, 600, $ffText)
-        color: $white
+	&__title
+		+flex(flex, center, space-between, nowrap)
+		+ft(32, 48, 600, $ffText)
+		color: $white
 
-        svg
-            opacity: 0
+		svg
+			opacity: 0
 
-        +maw($lg)
-            +ft(24, 24*1.4, 600)
-        +maw($xsm)
-            +ft(17, 17*1.4, 600)
+		+maw($lg)
+			+ft(24, 24*1.4, 600)
+		+maw($xsm)
+			+ft(17, 17*1.4, 600)
 
-    &__subtitle
-        +ft(16, 25, 600, $ffText2)
-        margin-top: 16px
-        margin-bottom: 30px
+	&__subtitle
+		+ft(16, 25, 600, $ffText2)
+		margin-top: 16px
+		margin-bottom: 30px
 
-    &__list
-        margin: 0
-        
-        li 
-            list-style-position: outside
-            padding-left: 10px
+	&__list
+		margin: 0
+		
+		li 
+			list-style-position: outside
+			padding-left: 10px
 
-            //+ft(16, 20, 400, $ffText2)
-            +ft(14, 14*1.4, 400, $ffText2)
+			//+ft(16, 20, 400, $ffText2)
+			+ft(14, 14*1.4, 400, $ffText2)
 
-            &:not(:first-child)
-                margin-top: 15px
+			&:not(:first-child)
+				margin-top: 15px
 
-    &__wrap
-        display: grid
-        grid-template-columns: 2fr 1fr 1fr
-        gap: 30px
-        margin-top: 60px
-        +maw($xsm)
-            margin-top: 30px
+	&__wrap
+		display: grid
+		grid-template-columns: 2fr 1fr 1fr
+		gap: 30px
+		margin-top: 60px
+		+maw($xsm)
+			margin-top: 30px
 
-    +maw($md)
-        &__wrap
-            grid-template-columns: 1fr 1fr
-        &:nth-child(1)
-            grid-row: 1
-            grid-column: 1
-            border-radius: 15px
-            &::after
-                border-radius: 15px
-            .card__content
-                padding: 20px 30px
-        &:nth-child(2)
-            grid-column: 2
-            grid-row: 1
-        &:nth-child(3)
-            grid-column: 1
-            grid-row: 2
-        &:nth-child(4)
-            grid-column: 2
-            grid-row: 2
-        &:nth-child(5)
-            grid-row: 3    
-            grid-column: 1  
+	+maw($md)
+		&__wrap
+			grid-template-columns: 1fr 1fr
+		&:nth-child(1)
+			grid-row: 1
+			grid-column: 1
+			border-radius: 15px
+			&::after
+				border-radius: 15px
+			.card__content
+				padding: 20px 30px
+		&:nth-child(2)
+			grid-column: 2
+			grid-row: 1
+		&:nth-child(3)
+			grid-column: 1
+			grid-row: 2
+		&:nth-child(4)
+			grid-column: 2
+			grid-row: 2
+		&:nth-child(5)
+			grid-row: 3    
+			grid-column: 1  
 
-    +maw($xs)
-        &, &:nth-child(1) 
-            .card__content
-                padding: 15px 10px
+	+maw($xs)
+		&, &:nth-child(1) 
+			.card__content
+				padding: 15px 10px
 
 
 
-    
+.counter
+	position: relative
+	width: 100%
+	text-align: center
+	user-select: none
+
+	&__content
+		+ps(absolute, (t, 0), (b, 0), (r, 0), (l, 0))
+		margin: auto
+		+maw($lg)
+			position: relative
+
+	&__overlay
+		content: ''
+		z-index: -1
+		+ft(99, 100, 400, $ffHeading)
+		text-shadow: 0 0 2px $blue
+		white-space: nowrap
+		color: $dark6
+		color: transparent
+		-webkit-text-stroke: 1px rgba($blue, 0.3)
+		text-stroke: 1px rgba($blue, 0.3)
+		text-shadow: none
+
+		+maw($lg)
+			opacity: 0
+			font-size: 0
+	&__wrap
+		margin-top: 25px
+		margin-bottom: 25px
+		+flex(flex, center, space-between, nowrap)
+		+maw($sm)
+			display: grid
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+			row-gap: 30px
+	
+	&__num
+		+ft(64, 64, 400, $ffHeading)
+		white-space: nowrap
+		color: $blue
+		background: $grad
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		+maw($md + 1)
+			font-size: 2em
+	   
+	&__title
+		text-transform: uppercase
+		+ft(16, 25, 600, $ffHeading)
+		color: $dark5
+		
+
+	
+.line
+	opacity: 0.3
+	+maw($xs)
+		display: none
