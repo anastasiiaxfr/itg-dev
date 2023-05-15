@@ -1,12 +1,39 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-{{ if $data.homepage.section_benefits }}
-{{ with $data.homepage.section_benefits }}
+{{ if $data.homepage.section_cta }}
+{{ with $data.homepage.section_cta }}
 
 
-<section class="section section_7" id="solutions">
+<section class="section section_7" id="cta">
     <div class="container">
         
+
+        <div class="row">
+
+            <div class="col-md-6 mb-4">
+
+                <div class="cta__title">
+                    {{ .title }}
+                </div>
+                <div class="cta__description">
+                    {{ .sub_title }}
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <form action="#" method="POST" novalidate class="form">
+                    <input type="text" placeholder="Ваше имя">
+                    <input type="text" placeholder="Ваш Email">
+                    <textarea placeholder="Ваш вопрос"></textarea>
+                    <button class="btn">Call to action</button>
+                </form>
+
+            </div>
+
+        </div>
+
+
 
     </div>
 </section>

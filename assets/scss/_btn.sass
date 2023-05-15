@@ -41,6 +41,8 @@
 		&::after
 			display: none	
 	.dropdown-menu
+		background-color: $dark3
+		color: $white
 		min-width: 5rem
 		margin-top: 5px
 		padding: 5px 10px
@@ -61,3 +63,34 @@
 			&:hover, &:focus, &:active
 				color: $black
 		
+.form
+	+flex(flex, center, flex-start, nowrap)
+	flex-direction: column
+	gap: 10px
+	input, textarea
+		width: 100%
+		padding: 13px 25px
+		+flex(flex, center, flex-start, nowrap)
+		background-color: transparent
+		border: 1.03536px solid $dark5
+		border-radius: $brs3
+		color: $white
+		resize: none
+	button
+		margin-top: 45px
+		margin-right: auto
+		padding: 15px 50px
+		background: $grad
+		color: $white
+		border-radius: $brs3
+		+ft(22, 33, 600, $ffText)
+		transition: $trs
+		&:hover, &:active, &:focus
+			color: $white
+			background: $grad0
+			box-shadow: $bxsd
+		+maw($xsm)
+			width: 100%
+			margin-top: 20px
+
+

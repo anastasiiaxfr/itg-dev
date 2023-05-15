@@ -4,7 +4,7 @@ body
 	background-image: url('../images/bg-base.svg')
 	background-repeat: no-repeat
 	background-size: cover
-	background-position: center top
+	background-position: center center
 	font-family: $ffText2
 
 
@@ -16,21 +16,32 @@ a
 		appearance: none
 		box-shadow: none
 
-
 .page
 	&__wrapper
 		overflow: hidden
 
 
 .section
-	&_1, &_3, &_5
+	&_1, &_3, &_5, &_7, &_8
 		margin-top: 75px
 		margin-bottom: 75px
 		//background: url('../images/bg2.svg') no-repeat 50%/cover
 		+maw($xs)
 			margin-top: 30px
 			margin-bottom: 30px
-		
+
+	&_7
+		.row
+			padding: 50px 30px
+			background: url('../images/bg-wave-0.svg') no-repeat 50% 40%/cover
+			border-radius: $brs4
+			overflow: hidden
+			border-bottom: 1px solid $blue
+
+			+maw($sm)
+				padding: 0
+				background-image: none
+				border: none
 
 .box
 	+flex(flex, center, flex-start, nowrap)
@@ -254,6 +265,7 @@ a
 		-webkit-text-stroke: 1px rgba($blue, 0.3)
 		text-stroke: 1px rgba($blue, 0.3)
 		text-shadow: none
+		opacity: 0.3
 
 		+maw($lg)
 			opacity: 0
@@ -288,3 +300,24 @@ a
 	opacity: 0.3
 	+maw($xs)
 		display: none
+
+
+.cta
+	&__title
+		+ft(48, 48, 400, $ffHeading)
+		color: inherit
+		background: $grad
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+	&__description
+		margin-top: 10px
+		+ft(16, 24, 400, $ffText)
+		letter-spacing: 0.1em
+	+maw($xsm)
+		&__title, &__description
+			text-align: center
+		&__title
+			+ft(32, 48, 400, $ffHeading)
+	+maw($xxs)
+		&__title
+			+ft(28, 28*1.4, 400, $ffHeading)

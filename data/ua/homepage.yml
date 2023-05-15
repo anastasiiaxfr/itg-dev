@@ -89,3 +89,13 @@ section_about:
 
     - title: 28
       description: HAPPY CLIENTS
+
+section_cta:
+  enable: true
+  title: Call to action
+  sub_title: 'Lorem ipsum ruba text pytin hyilo yobana blya tyt bydet call to action bogdan hay pridumaet'
+
+section_contacts:
+  enable: true
+  title: Contacts
+  sub_title: 'Contact us'

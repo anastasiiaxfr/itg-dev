@@ -1,13 +1,12 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-{{ if $data.homepage.section_benefits }}
-{{ with $data.homepage.section_benefits }}
+{{ if $data.homepage.section_contacts }}
+{{ with $data.homepage.section_contacts }}
 
 
-<section class="section section_8" id="solutions">
+<section class="section section_8" id="contacts">
     <div class="container">
-        
-
+        {{- partial "_hgroup.html" . -}}
     </div>
 </section>
 
