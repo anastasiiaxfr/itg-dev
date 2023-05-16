@@ -1,8 +1,29 @@
 - id: login
-  translation: Log In
+  translation: Регистрация
 
 - id: signup
-  translation: Sign Up
+  translation: Вход
 
-- id: search_placeholder
-  translation: Введіть ваше питання
+- id: consultation
+  translation: Напишите нам
+
+- id: send
+  translation: Отправить
+
+- id: name
+  translation: Имя Фамилия
+
+- id: tel
+  translation: Телефон
+
+- id: question
+  translation: Ваш вопрос
+
+- id: author
+  translation: Author
+
+- id: published
+  translation: Published
+
+- id: cat
+  translation: Categories

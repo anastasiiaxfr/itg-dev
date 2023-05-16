@@ -1,0 +1,9 @@
+---
+subscribe:
+  enable: true
+  title: Do you want to be part of the team?
+  sub_title: "We always welcome new and ambitious individuals to our team."
+  btn:
+    url: "#"
+    title: "Job at ITG"
+

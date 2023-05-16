@@ -3,18 +3,23 @@ $data.homepage.section_contacts }} {{ with $data.homepage.section_contacts }}
 
 <section class="section section_8" id="contacts">
   <div class="container">
-    {{- partial "_hgroup.html" . -}}
+    {{/*  {{- partial "_hgroup.html" . -}}  */}}
 
     <div class="row contacts__wrap">
       <div class="col-md-6">
         <a href="#" class="contacts__map">
           <img
-            src="{{`../images/map.png`}}"
+            src="{{`../images/map.png` | relURL }}"
             alt="{{ .Title }}"
             width="435"
             height="365"
           />
         </a>
+
+        {{/*  <div class="contacts__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2708.7228953013378!2d30.520156017219023!3d50.42491517624226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf197f340001%3A0x5941ad0fd82d8e99!2z0YPQuy4g0JLQsNGB0LjQu9C40Y8g0KLRjtGC0Y7QvdC90LjQutCwLCAyONCwLCDQmtC40LXQsiwgMDMxNTA!5e1!3m2!1sru!2sua!4v1688041341678!5m2!1sru!2sua" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>  */}}
+
       </div>
       <div class="col-md-6">
         <div class="contacts__title">

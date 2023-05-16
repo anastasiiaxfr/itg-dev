@@ -1,0 +1,27 @@
+---
+section_1:
+  enable: true
+  title: About
+  img: "../images/news.jpg"
+  video: ""
+  col: 
+    - paragraph: ITG Company has been in existence since 2018. Since then, we have experienced significant growth, as evidenced by our successful projects in the areas of Web 2.0 and Web 3.0. Over this time, a small team of 3 people has evolved into a team of 25 professional specialists who are our pride and main asset. Together, we have brought to life over 50 projects for 28 satisfied clients.
+    - paragraph: Our team of experienced developers creates high-quality web applications, websites, and platforms, taking into account the latest trends and innovations in technology. We develop user interfaces, integrate blockchain functionality, and prioritize the security and reliability of the solutions we develop.
+    - paragraph: We strive for long-term partnerships with our clients and place great importance on an individual approach. We work closely with each client to understand their unique needs and goals, and we offer solutions that not only meet but exceed their expectations.
+
+section_2:
+  enable: true
+  col: 
+    - paragraph: A website, an application, or an entire metaverse of a company is always its face. It is important for us to embody the spirit of our clients in the product we create for them. Moreover, we are looking towards the future of the Web 3.0 technologies. In this future, virtual assets and autonomous organizations become as commonplace as money and hierarchical organizations are today.
+      title: Mission
+    - paragraph: We create innovative Web 2.0 and Web 3.0 products that streamline business management and take it to the next level. Our solutions leverage the latest technologies and trends to deliver cutting-edge features and functionalities. Whether it's advanced analytics, seamless integrations, or enhanced user experiences, our products are designed to empower businesses and drive their success in the digital age.
+      title: Mission
+
+section_3:
+  enable: true
+  title: Values
+  items: 
+    - item: Openness and team spirit within each of us.
+    - item: Personal and professional development.
+    - item: Creative approach in solving standard situations.
+    - item: Freedom of thought and self-expression.

@@ -1,0 +1,110 @@
+.card
+    position: relative
+    background-color: transparent
+    border-radius: 30px
+    overflow: hidden
+
+    align-self: stretch
+
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: 50%
+    background-image: url(../images/card-bg.svg) 
+
+    transition: $trs
+    max-width: 90%
+
+    &.active, &:hover
+        &::after
+            @extend %mask
+            border-radius: inherit
+
+    &:hover
+        .card
+            &__toggle
+                transition: $trs
+                opacity: 1
+                cursor: pointer
+            &__overlay
+                opacity: 1
+                transition: $trs
+            &__img
+                opacity: 0
+                transition: $trs
+
+    &__content
+        +ps(absolute, (t, 0), (l, 0))
+        +sz(100%, 100%)
+        padding: 45px 50px
+        overflow: hidden
+        
+    &__overlay
+        overflow: hidden
+        opacity: 0
+        height: 100%
+        +flex(flex, center, flex-start, wrap)
+        
+        +maw($md)
+            height: auto
+            +ft(12, 12*1.4, 400)
+
+        +maw($xs)
+            +ft(10, 10*1.4, 400)
+            
+
+    &__img
+        +sz(100%, 100%)
+        display: block
+        object-fit: contain
+        margin-top: auto
+        margin-bottom: 0
+
+    &__title
+        +flex(flex, center, space-between, nowrap)
+        +ft(32, 48, 600, $ffText)
+        color: $white
+
+        +maw($lg)
+            +ft(24, 24*1.4, 600)
+        +maw($xsm)
+            +ft(17, 17*1.4, 600)
+
+    &__subtitle
+        +ft(16, 25, 600, $ffText2)
+        margin-top: 16px
+        margin-bottom: 30px
+
+    &__text
+        margin-top: 16px
+
+    &__list
+        margin: 0
+        
+        li 
+            list-style-position: outside
+            padding-left: 10px
+
+            //+ft(16, 20, 400, $ffText2)
+            +ft(14, 14*1.4, 400, $ffText2)
+
+            &:not(:first-child)
+                margin-top: 15px
+
+    &__wrap
+        display: grid
+        grid-template-columns: 2fr 1fr 1fr
+        gap: 30px
+        margin-top: var(--sectionMt)
+    &__wrapper
+        align-items: stretch
+        margin-top: var(--sectionMt)
+
+    +maw($md)
+        &__wrap
+            grid-template-columns: 1fr 1fr
+
+    +maw($xs)
+        border-radius: 20px
+        &__content
+            padding: 15px 20px
+

@@ -2,15 +2,32 @@
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
 
-			{{ .Scratch.Set "logo_h" "55" }}
-			{{ .Scratch.Set "logo_w" "110" }}
+                {{ .Scratch.Set "logo_h" "55" }}
+			    {{ .Scratch.Set "logo_w" "110" }}
+			    {{- partial "_logo.html" . -}}
 
-			{{- partial "_logo.html" . -}}
+               
 
-			<div class="navbar-btn">
-				{{- partial "_lang.html" . -}}
-				{{- partial "_btn-auth.html" . -}}
-			</div>
+                <div class="collapse navbar-collapse">
+                    {{- partial "_menu.html" . -}}
+                </div>  
+
+
+                <div class="navbar__cta">
+                    {{- partial "_lang.html" . -}}
+                    {{- partial "_btn-auth.html" . -}}
+
+                    <div class="navbar__toggler">
+                        <svg class="icon" width="25" height="25">
+                            <use xlink:href="#burger"></use>
+                          </svg>
+                          <svg class="icon" width="25" height="25">
+                            <use xlink:href="#close"></use>
+                          </svg>
+                    </div>
+                </div>
+               
+			
 		</div>
 	</nav>
 </header>

@@ -1,0 +1,44 @@
+.counter
+	position: relative
+	width: 100%
+	text-align: center
+	user-select: none
+
+	&__content
+		+ps(absolute, (t, 0), (b, 0), (r, 0), (l, 0))
+		margin: auto
+		+maw($lg)
+			position: relative
+
+	&__overlay
+		@extend %text
+
+		+maw($lg)
+			opacity: 0
+			font-size: 0
+	&__wrap
+		margin-top: calc(var(--sectionMt)/2)
+		margin-bottom: calc(var(--sectionMt)/2)
+		+flex(flex, center, space-between, nowrap)
+		+maw($sm)
+			display: grid
+			grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+			row-gap: 30px
+	
+	&__num
+		+ft(64, 64, 400, $ffHeading)
+		white-space: nowrap
+		color: $blue
+		background: $grad
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		+maw($md + 1)
+			font-size: 2em
+	   
+	&__title
+		text-transform: uppercase
+		+ft(16, 25, 600, $ffHeading)
+		color: $dark5
+		
+
+	

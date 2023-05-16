@@ -3,3 +3,27 @@
 
 - id: signup
   translation: Вход
+
+- id: consultation
+  translation: Напишите нам
+
+- id: send
+  translation: Отправить
+
+- id: name
+  translation: Имя Фамилия
+
+- id: tel
+  translation: Телефон
+
+- id: question
+  translation: Ваш вопрос
+
+- id: author
+  translation: Автор
+
+- id: published
+  translation: Опулiковано
+
+- id: cat
+  translation: Категорiя

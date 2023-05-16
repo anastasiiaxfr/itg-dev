@@ -1,12 +1,57 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-{{ if $data.homepage.section_benefits }}
-{{ with $data.homepage.section_benefits }}
+{{ if $data.homepage.section_blog }}
+{{ with $data.homepage.section_blog }}
 
 
-<section class="section section_6" id="solutions">
+<section class="section section_6" id="blog">
     <div class="container">
-        
+        {{- partial "_hgroup.html" . -}}
+
+        <div class="row news__wrap">
+
+            {{ range first 2 (where $.Site.RegularPages "Section" "blog") }}
+            <div class="col-lg-6">
+
+                <a href="{{ .Permalink }}" class="news">
+                    <figure class="news__img">
+                        {{ if .Params.img }}
+                            <img src="{{ .Params.img | relURL }}" alt="{{ .Params.title }}">
+                            {{ else }}
+                            <img src="{{ `../images/news.jpg` | relURL }}" alt="{{ .Params.title }}">
+                        {{ end }}
+                    </figure>
+                    <div class="news__content">
+                        <div class="news__header">
+                            <div class="news__title">
+                                {{ .Params.title | truncate 65 }}
+                            </div>
+                            <div class="news__read">
+                                {{ .Params.read }} min read
+                            </div>
+                        </div>
+                        <div class="news__info">
+                            {{ if .Params.cat }}
+                            <div class="news__cat">
+                                {{ .Params.cat }}
+                            </div>
+                            {{ end }}
+                            <div class="news__time">
+                                {{  .PublishDate.Format "15:04" }} /
+                                <span>{{ .PublishDate.Format "02.01.2006"  }} </span> 
+                            </div>
+                        </div>
+                        <div class="news__text">
+                            {{ .Content | truncate 100 }}
+                        </div>
+                    </div>
+                </a>
+                   
+
+            </div>
+            {{ end }}
+         
+        </div>
 
     </div>
 </section>

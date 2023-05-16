@@ -2,34 +2,31 @@ baseURL = "/"
 # canonifyURLs = true
 defaultContentLanguage = "ua"
 disableLanguages = ["ru"]
-paginate = "6"
+paginate = "10"
 relativeURLs = true
 summaryLength = "50"
-title = "International Trade Group"
-# [Languages.en]
-# contentDir = "content/en"
-# home = "Home"
-# languageCode = "en-us"
-# languageName = "En"
-# weight = 3
+
+[Languages.en]
+contentDir = "content/en"
+home = "Home"
+languageCode = "en-us"
+languageName = "En"
+weight = 1
+title = "Home"
 [Languages.ru]
 contentDir = "content/ru"
 home = "Главная"
 languageCode = "ru"
 languageName = "Ру"
 weight = 2
+title = "Главная"
 [Languages.ua]
 contentDir = "content/ua"
 home = "Головна"
+title = "Головна"
 languageCode = "uk"
 languageName = "Укр"
 weight = 3
-[Languages.en]
-contentDir = "content/en"
-home = "Home"
-languageCode = "en"
-languageName = "ENG"
-weight = 1
 
 
 
@@ -62,23 +59,28 @@ search = true
 # soc
 tm = "https://t.me/ITG_club"
 
+
+[[params.plugins.css]]
+link = "plugins/swiper/swiper-bundle.min.css"
 [[params.plugins.js]]
-link = "plugins/js/jquery.min.js"
+link = "plugins/swiper/swiper-bundle.min.js"
+# [[params.plugins.js]]
+# link = "plugins/js/jquery.min.js"
 # [[params.plugins.js]]
 # link = "plugins/js/bootstrap.bundle.min.js"
-[[params.plugins.js]]
-link = "plugins/search/fuse.min.js"
-[[params.plugins.js]]
-link = "plugins/search/mark.js"
-[[params.plugins.js]]
-link = "plugins/search/search.js"
+# [[params.plugins.js]]
+# link = "plugins/search/fuse.min.js"
+# [[params.plugins.js]]
+# link = "plugins/search/mark.js"
+# [[params.plugins.js]]
+# link = "plugins/search/search.js"
 
 [params.preloader]
 enable = true
 preloader = ""
 
 [taxonomies]
-category = "categories"
+cat = "cat"
 tag = "tags"
 
 
@@ -158,18 +160,45 @@ link = "mailto:office@itg-investments.com"
 icon_sm = "email"
 
 
-[[params.contacts]]
+[[Languages.ru.params.contacts]]
 icon = "contacts-i1"
 title = "+38 050 563 58 07"
 link = "tel:380505635807"
-[[params.contacts]]
+[[Languages.ru.params.contacts]]
 icon = "contacts-i2"
 title = "office@itg-investments.com"
 link = "mailto:office@itg-investments.com"
-[[params.contacts]]
+[[Languages.ru.params.contacts]]
 icon = "contacts-i3"
-title = "м. Київ Кловський узвіз, 7"
+title = "г. Киев, ул. Василия Тютюнника 28А"
 link = "#"
+
+[[Languages.ua.params.contacts]]
+icon = "contacts-i1"
+title = "+38 050 563 58 07"
+link = "tel:380505635807"
+[[Languages.ua.params.contacts]]
+icon = "contacts-i2"
+title = "office@itg-investments.com"
+link = "mailto:office@itg-investments.com"
+[[Languages.ua.params.contacts]]
+icon = "contacts-i3"
+title = "м. Київ, вул. Василя Тютюнника 28А"
+link = "#"
+
+[[Languages.en.params.contacts]]
+icon = "contacts-i1"
+title = "+38 050 563 58 07"
+link = "tel:380505635807"
+[[Languages.en.params.contacts]]
+icon = "contacts-i2"
+title = "office@itg-investments.com"
+link = "mailto:office@itg-investments.com"
+[[Languages.en.params.contacts]]
+icon = "contacts-i3"
+title = "Kyiv, Vasylya Tyutyunnika Street 28A"
+link = "#"
+
 
 [[params.soc]]
 icon = "soc-tk"
@@ -187,116 +216,425 @@ link = "https://www.linkedin.com/in/international-trade-group"
 icon = "soc-ytb"
 link = "https://www.youtube.com/channel/UC4Blz7CAtrKwTL8mYt6LpfA"
 
-############################# footer #################################
-[params.footer]
-    copyright = "&copy; 2023 ITG Foundation. All rights reserved"
+############################# header #################################
+[[Languages.en.menu.main]]
+URL = "/about"
+name = "About"
+weight = 1
 
-[[menu.footer]]
+[[Languages.en.menu.main]]
+URL = "/services"
+name = "Services"
+weight = 2
+
+[[Languages.en.menu.main]]
+URL = "/job"
+name = "Job"
+weight = 3
+
+[[Languages.en.menu.main]]
+URL = "/blog"
+name = "Blog"
+weight = 4
+
+[[Languages.en.menu.main]]
+URL = "/contacts"
+name = "Contacts"
+weight = 4
+
+###
+[[Languages.ru.menu.main]]
+URL = "/about"
+name = "О нас"
+weight = 1
+
+[[Languages.ru.menu.main]]
+URL = "/services"
+name = "Наши услуги"
+weight = 2
+
+[[Languages.ru.menu.main]]
+URL = "/job"
+name = "Карьера"
+weight = 3
+
+[[Languages.ru.menu.main]]
+URL = "/blog"
+name = "Блог"
+weight = 4
+
+[[Languages.ru.menu.main]]
+URL = "/contacts"
+name = "Контакты"
+weight = 4
+
+###
+[[Languages.ua.menu.main]]
+URL = "/about"
+name = "Про нас"
+weight = 1
+
+[[Languages.ua.menu.main]]
+URL = "/services"
+name = "Наші послуги"
+weight = 2
+
+[[Languages.ua.menu.main]]
+URL = "/job"
+name = "Кар'єра"
+weight = 3
+
+[[Languages.ua.menu.main]]
+URL = "/blog"
+name = "Блог"
+weight = 4
+
+[[Languages.ua.menu.main]]
+URL = "/contacts"
+name = "Контакти"
+weight = 4
+
+############################# footer #################################
+[Languages.en.params.footer]
+    copyright = "&copy; 2023 ITG Foundation. All rights reserved"
+[Languages.ua.params.footer]
+    copyright = "&copy; 2023 ITG Foundation. Всі права захищені."
+[Languages.ru.params.footer]
+    copyright = "&copy; 2023 ITG Foundation. Все права защищены"
+
+
+[[Languages.en.menu.footer]]
 name = "About"
 weight = 1
 identifier = "about"
 hasChildren = true 
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "about"
     name = "Company"
-    URL = "/about"
+    URL = "https://itg-main.netlify.app/about"
     weight = 1
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "about"
     name = "Team"
-    URL = "/team"
+    URL = "https://itg-main.netlify.app/team/"
     weight = 2
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "about"
     name = "Careers"
-    URL = "/works"
+    URL = "https://itg-main.netlify.app/works/"
     weight = 3
 
-[[menu.footer]]
+[[Languages.en.menu.footer]]
 name = "Products"
 weight = 2
 identifier = "product"
 hasChildren = true
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "product"
     name = "ITG main"
     URL = "https://itg-main.netlify.app/"
     weight = 1
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "product"
     name = "Epicurus"
     URL = "https://itg-epicurus.netlify.app/"
     weight = 2
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "product"
     name = "ITG News"
     URL = "https://itg-news-group.netlify.app/"
     weight = 3
 
-[[menu.footer]]
+[[Languages.en.menu.footer]]
 name = "Resources"
 weight = 3
 identifier = "resources"
 hasChildren = true
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "resources"
-    name = "FAQ"
-    URL = "/faq"
+    name = "Blog"
+    URL = "/blog"
     weight = 1
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "resources"
-    name = "Wiki"
-    URL = "/wiki"
+    name = "Cases"
+    URL = "/cases"
     weight = 2
 
-[[menu.footer]]
+[[Languages.en.menu.footer]]
 name = "Documentation"
 weight = 4 
 identifier = "documentation"
 hasChildren = true   
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "documentation"
     name = "Terms and Conditions"
     URL = "/terms"
     weight = 1
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "documentation"
     name = "Privacy policy"
     URL = "/policy"
     weight = 2
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "documentation"
     name = "Terms of use"
     URL = "/terms-of-use"
     weight = 3
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "documentation"
     name = "Cookie policy"
     URL = "/cookie"
     weight = 4
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "documentation"
     name = "Risk warnings"
     URL = "/risk"
     weight = 5
-[[menu.footer]]
+[[Languages.en.menu.footer]]
 name = "Contacts"
 weight = 5    
 identifier = "contacts"
 hasChildren = true
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "contacts"
     name = "+38 050 563 58 07"
     URL = "380505635807"
     pre = "tel"
     weight = 1
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
     parent = "contacts"
     name = "office@itg-investments.com"
     URL = "mailto:office@itg-investments.com"
     pre = "mail"
     weight = 2
-    [[menu.footer]]
+    [[Languages.en.menu.footer]]
+    parent = "contacts"
+    name = "Kyiv, Vasylya Tyutyunnika Street 28A"
+    URL = "#"
+    pre = "map"
+    weight = 3
+
+###
+[[Languages.ru.menu.footer]]
+name = "О нас"
+weight = 1
+identifier = "about"
+hasChildren = true 
+    [[Languages.ru.menu.footer]]
+    parent = "about"
+    name = "Компания"
+    URL = "https://itg-main.netlify.app/about"
+    weight = 1
+    [[Languages.ru.menu.footer]]
+    parent = "about"
+    name = "Команда"
+    URL = "https://itg-main.netlify.app/team/"
+    weight = 2
+    [[Languages.ru.menu.footer]]
+    parent = "about"
+    name = "Вакансии"
+    URL = "https://itg-main.netlify.app/works/"
+    weight = 3
+
+[[Languages.ru.menu.footer]]
+name = "Продукты"
+weight = 2
+identifier = "product"
+hasChildren = true
+    [[Languages.ru.menu.footer]]
+    parent = "product"
+    name = "ITG main"
+    URL = "https://itg-main.netlify.app/"
+    weight = 1
+    [[Languages.ru.menu.footer]]
+    parent = "product"
+    name = "Epicurus"
+    URL = "https://itg-epicurus.netlify.app/"
+    weight = 2
+    [[Languages.ru.menu.footer]]
+    parent = "product"
+    name = "ITG News"
+    URL = "https://itg-news-group.netlify.app/"
+    weight = 3
+
+[[Languages.ru.menu.footer]]
+name = "Ресурсы"
+weight = 3
+identifier = "resources"
+hasChildren = true
+    [[Languages.ru.menu.footer]]
+    parent = "resources"
+    name = "Блог"
+    URL = "/blog"
+    weight = 1
+    [[Languages.ru.menu.footer]]
+    parent = "resources"
+    name = "Кейсы"
+    URL = "/cases"
+    weight = 2
+
+[[Languages.ru.menu.footer]]
+name = "Документация"
+weight = 4 
+identifier = "documentation"
+hasChildren = true   
+    [[Languages.ru.menu.footer]]
+    parent = "documentation"
+    name = "Условия и положения"
+    URL = "/terms"
+    weight = 1
+    [[Languages.ru.menu.footer]]
+    parent = "documentation"
+    name = "Политика конфиденциальности"
+    URL = "/policy"
+    weight = 2
+    [[Languages.ru.menu.footer]]
+    parent = "documentation"
+    name = "Условия использования"
+    URL = "/terms-of-use"
+    weight = 3
+    [[Languages.ru.menu.footer]]
+    parent = "documentation"
+    name = "Cookie политика"
+    URL = "/cookie"
+    weight = 4
+    [[Languages.ru.menu.footer]]
+    parent = "documentation"
+    name = "Предупреждения о рисках"
+    URL = "/risk"
+    weight = 5
+[[Languages.ru.menu.footer]]
+name = "Контакты"
+weight = 5    
+identifier = "contacts"
+hasChildren = true
+    [[Languages.ru.menu.footer]]
+    parent = "contacts"
+    name = "+38 050 563 58 07"
+    URL = "380505635807"
+    pre = "tel"
+    weight = 1
+    [[Languages.ru.menu.footer]]
+    parent = "contacts"
+    name = "office@itg-investments.com"
+    URL = "mailto:office@itg-investments.com"
+    pre = "mail"
+    weight = 2
+    [[Languages.ru.menu.footer]]
+    parent = "contacts"
+    name = "г. Киев, ул. Василия Тютюнника 28А"
+    URL = "#"
+    pre = "map"
+    weight = 3
+
+###
+[[Languages.ua.menu.footer]]
+name = "Про нас"
+weight = 1
+identifier = "about"
+hasChildren = true 
+    [[Languages.ua.menu.footer]]
+    parent = "about"
+    name = "Компанія"
+    URL = "https://itg-main.netlify.app/about"
+    weight = 1
+    [[Languages.ua.menu.footer]]
+    parent = "about"
+    name = "Команда"
+    URL = "https://itg-main.netlify.app/team/"
+    weight = 2
+    [[Languages.ua.menu.footer]]
+    parent = "about"
+    name = "Кар'єра"
+    URL = "https://itg-main.netlify.app/works/"
+    weight = 3
+
+[[Languages.ua.menu.footer]]
+name = "Продукти"
+weight = 2
+identifier = "product"
+hasChildren = true
+    [[Languages.ua.menu.footer]]
+    parent = "product"
+    name = "ITG main"
+    URL = "https://itg-main.netlify.app/"
+    weight = 1
+    [[Languages.ua.menu.footer]]
+    parent = "product"
+    name = "Epicurus"
+    URL = "https://itg-epicurus.netlify.app/"
+    weight = 2
+    [[Languages.ua.menu.footer]]
+    parent = "product"
+    name = "ITG News"
+    URL = "https://itg-news-group.netlify.app/"
+    weight = 3
+
+[[Languages.ua.menu.footer]]
+name = "Ресурси"
+weight = 3
+identifier = "resources"
+hasChildren = true
+    [[Languages.ua.menu.footer]]
+    parent = "resources"
+    name = "Блог"
+    URL = "/blog"
+    weight = 1
+    [[Languages.ua.menu.footer]]
+    parent = "resources"
+    name = "Кейсы"
+    URL = "/cases"
+    weight = 2
+
+[[Languages.ua.menu.footer]]
+name = "Документація"
+weight = 4 
+identifier = "documentation"
+hasChildren = true   
+    [[Languages.ua.menu.footer]]
+    parent = "documentation"
+    name = "Умови та положення"
+    URL = "/terms"
+    weight = 1
+    [[Languages.ua.menu.footer]]
+    parent = "documentation"
+    name = "Політика конфіденційності"
+    URL = "/policy"
+    weight = 2
+    [[Languages.ua.menu.footer]]
+    parent = "documentation"
+    name = "Умови використання"
+    URL = "/terms-of-use"
+    weight = 3
+    [[Languages.ua.menu.footer]]
+    parent = "documentation"
+    name = "Cookie політика"
+    URL = "/cookie"
+    weight = 4
+    [[Languages.ua.menu.footer]]
+    parent = "documentation"
+    name = "Попередження про ризики"
+    URL = "/risk"
+    weight = 5
+[[Languages.ua.menu.footer]]
+name = "Контакти"
+weight = 5    
+identifier = "contacts"
+hasChildren = true
+    [[Languages.ua.menu.footer]]
+    parent = "contacts"
+    name = "+38 050 563 58 07"
+    URL = "380505635807"
+    pre = "tel"
+    weight = 1
+    [[Languages.ua.menu.footer]]
+    parent = "contacts"
+    name = "office@itg-investments.com"
+    URL = "mailto:office@itg-investments.com"
+    pre = "mail"
+    weight = 2
+    [[Languages.ua.menu.footer]]
     parent = "contacts"
     name = "м. Київ, вул. Василя Тютюнника 28А"
     URL = "#"
