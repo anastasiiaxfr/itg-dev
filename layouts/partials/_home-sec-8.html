@@ -1,14 +1,54 @@
-{{ $data := index .Site.Data .Site.Language.Lang }}
-
-{{ if $data.homepage.section_contacts }}
-{{ with $data.homepage.section_contacts }}
-
+{{ $data := index .Site.Data .Site.Language.Lang }} {{ if
+$data.homepage.section_contacts }} {{ with $data.homepage.section_contacts }}
 
 <section class="section section_8" id="contacts">
-    <div class="container">
-        {{- partial "_hgroup.html" . -}}
+  <div class="container">
+    {{- partial "_hgroup.html" . -}}
+
+    <div class="row contacts__wrap">
+      <div class="col-md-6">
+        <a href="#" class="contacts__map">
+          <img
+            src="{{`../images/map.png`}}"
+            alt="{{ .Title }}"
+            width="435"
+            height="365"
+          />
+        </a>
+      </div>
+      <div class="col-md-6">
+        <div class="contacts__title">
+          {{ .sub_title }}
+          <div class="contacts__title-overlay">{{ .sub_title }}</div>
+        </div>
+
+        <ul class="contacts__main">
+          {{ range $.Site.Params.contacts }}
+          <li>
+            <a href="{{ .link }}" target="_blank">
+              <svg class="icon" width="28" height="28">
+                <use xlink:href="#{{ .icon }}"></use>
+              </svg>
+              {{ .title }}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <ul class="contacts__line">
+        {{ range $.Site.Params.soc }}
+        <li>
+          <a href="{{ .link }}" target="_blank">
+            <svg class="icon" width="28" height="28">
+              <use xlink:href="#{{ .icon }}"></use>
+            </svg>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
     </div>
+  </div>
 </section>
 
-{{ end }}
-{{ end }}
+{{ end }} {{ end }}

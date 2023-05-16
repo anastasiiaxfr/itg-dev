@@ -35,6 +35,7 @@ $xlg: 1400
 $lg: 1200
 $md: 991
 $sm: 768
+$lsm: 640
 $xsm: 520
 $xs: 480
 $xxs: 380
@@ -48,6 +49,8 @@ $brs3: 15px
 $brs4: 30px
 
 $gap20: 20px
+$gapY: 30px
+$gapSection: 50px
 
 
 
@@ -245,3 +248,21 @@ $i: 0
 	inset: 0
 	padding: 2px
 	background: $grad2
+
+%text
+    z-index: -1
+    +ft(99, 100, 400, $ffHeading)
+    text-shadow: 0 0 2px $blue
+    white-space: nowrap
+    color: $dark6
+    color: transparent
+    -webkit-text-stroke: 1px rgba($blue, 0.3)
+    text-stroke: 1px rgba($blue, 0.3)
+    text-shadow: none
+    opacity: 0.3
+
+%text-grad
+    color: inherit
+    background: $grad
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent

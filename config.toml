@@ -157,6 +157,36 @@ title = "Email"
 link = "mailto:office@itg-investments.com"
 icon_sm = "email"
 
+
+[[params.contacts]]
+icon = "contacts-i1"
+title = "+38 050 563 58 07"
+link = "tel:380505635807"
+[[params.contacts]]
+icon = "contacts-i2"
+title = "office@itg-investments.com"
+link = "mailto:office@itg-investments.com"
+[[params.contacts]]
+icon = "contacts-i3"
+title = "м. Київ Кловський узвіз, 7"
+link = "#"
+
+[[params.soc]]
+icon = "soc-tk"
+link = "http://www.tiktok.com/@itg_general__"
+[[params.soc]]
+icon = "soc-im"
+link = "https://www.instagram.com/itg_official__/"
+[[params.soc]]
+icon = "soc-tm"
+link = "https://t.me/ITG_club"
+[[params.soc]]
+icon = "soc-ln"
+link = "https://www.linkedin.com/in/international-trade-group"
+[[params.soc]]
+icon = "soc-ytb"
+link = "https://www.youtube.com/channel/UC4Blz7CAtrKwTL8mYt6LpfA"
+
 ############################# footer #################################
 [params.footer]
     copyright = "&copy; 2023 ITG Foundation. All rights reserved"
