@@ -22,14 +22,10 @@ a
 
 
 .section
-	&_1, &_3, &_5, &_7, &_8
-		margin-top: 75px
-		margin-bottom: 75px
-		//background: url('../images/bg2.svg') no-repeat 50%/cover
-		+maw($xs)
-			margin-top: $gapSection
-			margin-bottom: $gapSection
-
+	margin-top: var(--gapSection)
+	margin-bottom: var(--gapSection)
+	//background: url('../images/bg2.svg') no-repeat 50%/cover
+	
 	&_7
 		.row
 			//padding: 50px 30px
@@ -87,9 +83,8 @@ a
 		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
 		gap: 20px
 		justify-content: center
-		margin-top: 60px
+		margin-top: var(--sectionMt)
 		+maw($xsm)
-			margin-top: 30px
 			gap: 0
 	   
 
@@ -208,9 +203,7 @@ a
 		display: grid
 		grid-template-columns: 2fr 1fr 1fr
 		gap: 30px
-		margin-top: 60px
-		+maw($xsm)
-			margin-top: 30px
+		margin-top: var(--sectionMt)
 
 	+maw($md)
 		&__wrap
@@ -262,8 +255,8 @@ a
 			opacity: 0
 			font-size: 0
 	&__wrap
-		margin-top: 25px
-		margin-bottom: 25px
+		margin-top: calc(var(--sectionMt)/2)
+		margin-bottom: calc(var(--sectionMt)/2)
 		+flex(flex, center, space-between, nowrap)
 		+maw($sm)
 			display: grid
@@ -326,7 +319,7 @@ a
 	&__wrap
 		position: relative
 		//margin-top: 25px
-		margin-top: 35px
+		margin-top: var(--sectionMt)
 		align-items: center
 
 	&__map
@@ -345,12 +338,12 @@ a
 			gap: 20px
 			margin-top: 15px
 			margin-bottom: 15px
-			+ft(24, 36, 400, $ffText)
+			+ft(24, 36, 400, $ffText2)
 			transition: $trs
 			&:hover, &:focus, &:active
 				text-decoration: underline
 			+maw($md)
-				+ft(16, 16*1.5, 400, $ffText)
+				+ft(16, 16*1.5, 400, $ffText2)
 			
 
 	&__line
@@ -429,3 +422,79 @@ a
 		+miw($lg)
 			width: 80%
 			
+.news
+	display: block
+	height: 100%
+	margin: 0
+	border-radius: $brs3
+	overflow: hidden
+	align-self: stretch
+	+theme(dark3)
+
+	&__wrap
+		margin-top: calc(var(--sectionMt)/2)
+		row-gap: $gap20
+
+	&__img
+		position: relative
+		width: 100%
+		padding-top: 50%
+		margin: 0
+		border-radius: 
+
+		& > *
+			+ps(absolute, (t, 0), (l, 0))
+			display: block
+			+sz(100%, 100%)
+			object-fit: cover
+
+	&__content
+		padding: 30px 30px 35px
+
+	&__header, 
+		+flex(flex, top, space-between, nowrap)
+		gap: 15px
+
+	&__info
+		+flex(flex, center, flex-start, nowrap)
+		gap: 15px
+		margin-top: 10px
+
+	&__text
+		margin-top: 15px
+		+ft(14, 18, 400, $ffText2)
+
+		p:last-child
+			margin-bottom: 0
+
+	&__time
+		//+ft(14, 14, 400, $ffText2)
+		+ft(12, 12, 400, $ffText2)
+		letter-spacing: -0.015em
+		color: rgba($white, 0.5)
+
+	&__cat
+		color: $blue1
+		//+ft(16, 25, 500, $ffText2)
+		+ft(14, 14*1.4, 500, $ffText2)
+		letter-spacing: 0.05em
+		text-transform: uppercase
+
+	&__read
+		color: $blue1
+		+ft(12, 12*1.4, 300, $ffText2)
+		white-space: nowrap
+
+	&__title
+		@extend %text-grad
+		+ft(24, 24*1.4, 900, $ffText2)
+
+	&:hover
+		&__text, &__title 
+			text-decoration: underline
+
+	+maw($xs)
+		&__read
+			display: none
+		&__title
+			font-size: 18px

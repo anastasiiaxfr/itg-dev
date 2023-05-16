@@ -79,6 +79,10 @@ $gapSection: 50px
 		background-color: $dark1
 		color: $grey1
 
+	@if $theme == dark3
+		background-color: $dark2
+		color: $dark5
+
 	@if $theme == white
 		background-color: $white
 		color: $black
@@ -229,6 +233,13 @@ $i: 0
 	
 // +rfz(1120, 320, 12, 40)
 
+\:root
+	--gapSection: 75px
+	--sectionMt: 50px
+	+maw($xs)
+		--gapSection: 50px
+	+maw($xsm)
+		--sectionMt: 30px
 
 @keyframes toBtm 
 	0%

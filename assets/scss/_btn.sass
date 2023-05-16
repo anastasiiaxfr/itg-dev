@@ -72,10 +72,12 @@
 		padding: 13px 25px
 		+flex(flex, center, flex-start, nowrap)
 		background-color: transparent
-		border: 1.03536px solid $dark5
+		border: 1px solid $dark5
 		border-radius: $brs3
 		color: $white
 		resize: none
+		&:hover, &:active, &:focus, &:focus-within
+			border-color: $blue
 	button
 		margin-top: 45px
 		margin-right: auto
@@ -83,7 +85,9 @@
 		background: $grad
 		color: $white
 		border-radius: $brs3
-		+ft(22, 33, 600, $ffText)
+		//+ft(22, 33, 600, $ffText)
+		+ft(20, 20*1.2, 500, $ffText)
+		letter-spacing: 0.05em
 		transition: $trs
 		&:hover, &:active, &:focus
 			color: $white
@@ -94,3 +98,11 @@
 			margin-top: 20px
 
 
+.btn
+	&__wrap
+		+flex(flex, center, flex-start, nowrap)
+		gap: $gap20
+	&__text
+		+ft(20, 30, 400, $ffText)
+		letter-spacing: 0.01em
+		color: $grey1

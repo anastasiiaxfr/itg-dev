@@ -168,7 +168,7 @@ title = "office@itg-investments.com"
 link = "mailto:office@itg-investments.com"
 [[params.contacts]]
 icon = "contacts-i3"
-title = "м. Київ Кловський узвіз, 7"
+title = "м. Київ, вул. Василя Тютюнника 28А"
 link = "#"
 
 [[params.soc]]
@@ -199,17 +199,17 @@ hasChildren = true
     [[menu.footer]]
     parent = "about"
     name = "Company"
-    URL = "/about"
+    URL = "https://itg-main.netlify.app/about"
     weight = 1
     [[menu.footer]]
     parent = "about"
     name = "Team"
-    URL = "/team"
+    URL = "https://itg-main.netlify.app/team/"
     weight = 2
     [[menu.footer]]
     parent = "about"
     name = "Careers"
-    URL = "/works"
+    URL = "https://itg-main.netlify.app/works/"
     weight = 3
 
 [[menu.footer]]
@@ -240,13 +240,13 @@ identifier = "resources"
 hasChildren = true
     [[menu.footer]]
     parent = "resources"
-    name = "FAQ"
-    URL = "/faq"
+    name = "Blog"
+    URL = "/blog"
     weight = 1
     [[menu.footer]]
     parent = "resources"
-    name = "Wiki"
-    URL = "/wiki"
+    name = "Cases"
+    URL = "/cases"
     weight = 2
 
 [[menu.footer]]

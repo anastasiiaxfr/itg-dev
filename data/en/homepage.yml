@@ -6,7 +6,7 @@ hero:
 
 section_benefits:
   enable: true
-  title: Преимущества
+  title: Benefits
   items:
     - title: Manager
       img: '../images/benefits1.png'
@@ -99,3 +99,10 @@ section_contacts:
   enable: true
   title: Contacts
   sub_title: 'Contact us'
+
+section_blog:
+  enable: true
+  title: Blog
+  btn:
+    title: "see all"
+    link: "/blog"

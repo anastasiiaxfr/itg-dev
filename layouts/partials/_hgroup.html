@@ -1,4 +1,13 @@
+{{ $logo_mode := .Scratch.Get "logo_mode" }}
+
 <hgroup class="hgroup">
   <h2>{{ .title }}</h2>
+  {{ if .btn }}
+  <div class="btn__wrap">
+    <a class="btn__text" href="{{ .btn.link }}">{{ .btn.title }}</a>
+    <img class="btn__line" src="{{ `../images/line.svg` | relURL }}" alt="{{ .title }}" />
+  </div>
+  {{ else }}
   <img src="{{ `../images/line2.svg` | relURL }}" alt="{{ .title }}" />
+  {{ end }}
 </hgroup>
