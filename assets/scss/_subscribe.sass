@@ -1,0 +1,27 @@
+.subscribe
+    @extend %box
+    padding: 50px 
+    +flex(flex, center, space-between, wrap)
+    +maw($xs)
+        padding: 0
+        overflow: visible
+    &__title
+        @extend %text-grad
+        +ft(48, 48*1.4, 700)
+        p
+            margin: 0
+        +maw($sm)
+            +ft(32, 32*1.4, 700)
+            p
+                display: inline
+    .btn
+        +sz(250px, 60px)
+        +ft(20, 20, 600)
+        background: $grad
+        color: $white
+        +maw($xs)
+            +ft(16, 16, 600)
+            height: 50px
+            width: auto
+
+

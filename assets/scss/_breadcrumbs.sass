@@ -1,0 +1,19 @@
+.breadcrumb
+    list-style-type: none
+    padding: 0
+    +flex(flex, center, center, wrap)
+    gap: 8px
+    margin: 0
+    &__wrap
+        margin-bottom: var(--gapMd)
+        margin-top: 10px
+    li
+        &::after
+            content: '/'
+            padding-left: 4px
+        &:last-child
+            &::after
+                content: none
+        &.active
+            color: $blue
+            

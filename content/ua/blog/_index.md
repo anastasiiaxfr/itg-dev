@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Блог"
 title_before: ""
 titile_after: ""
 

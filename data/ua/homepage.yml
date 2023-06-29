@@ -1,24 +1,61 @@
 ---
 hero:
   enable: true
-  title: Web Development
-  sub_title: "We develop web 3.0 and help you digitalise your business"
+  title: ITG Development
+  sub_title: "Инновационные решения для масштабирования бизнеса"
+
+section_about:
+  enable: true
+  title: Кто мы?
+  col: 
+    - paragraph:  Компания, которая специализируется на разработке Web 2.0 и Web 3.0 решений для бизнеса по всему миру.
+    - paragraph:  Мы работаем тесно с каждым клиентом, чтобы понять его уникальные потребности и цели, и предлагаем решения, максимально соответствующие и превосходящие их ожидания.
+
+section_achievements:
+  enable: true
+  title: Достижения
+  items:
+    - title: 25
+      description: WORKERS
+  
+    - title: 50
+      description: COMPLETED PROJECTS
+      
+    - title: 3 800
+      description: HOURS WORKED
+
+    - title: 28
+      description: HAPPY CLIENTS
 
 section_benefits:
   enable: true
-  title: Benefits
+  title: Преимущества
   items:
-    - title: Manager
-      img: '../images/benefits1.png'
-      description: Прикреплённый менеджер проекта
-  
-    - title: Road map
-      img: '../images/benefits2.png'
-      description: Создание дорожной карты
-      
-    - title: Fix price
-      img: '../images/benefits3.png'
-      description: Фиксированная оплата за проект
+    - icon: 'benefit-1'
+      title: 'Инновационные решения с лучшим качеством'
+      sub_title: 'В своей работе мы используем только современные технологии, которые способствуют развитию бизнеса.'
+    - icon: 'benefit-2'
+      title: 'Постоянная поддержка менеджера'
+      sub_title: 'К каждому проекту мы назначаем менеджера, который ведет полный цикл от инициации проекта до его передачи клиенту.'
+    - icon: 'benefit-3'
+      title: 'Экспертиза и опыт'
+      sub_title: 'У нас есть знания и навыки, чтобы создать высококачественные продукты'
+    - icon: 'benefit-4'
+      title: 'Индивидуальный подход'
+      sub_title: 'Мы внимательно изучаем потребности клиента и создаем наиболее подходящее для клиента решение.'
+    - icon: 'benefit-5'
+      title: 'Техническая поддержка'
+      sub_title: 'После завершения проекта мы предоставляем поддержку и обслуживание, чтобы гарантировать бесперебойную работу системы.'
+
+section_cta:
+  enable: true
+  title: Остались вопросы?
+  sub_title: 'Заполните анкету, чтобы получить подробный ответ'
+
+
+
+
+
 
 section_services:
   enable: true
@@ -74,26 +111,6 @@ section_services:
         - item: 'Тестирование: после создания приложения, оно будет протестировано на различных устройствах и операционных системах, чтобы убедиться, что оно работает корректно.'
         - item: 'Развертывание и поддержка: приложение будет развернуто в магазинах приложений, таких как Google Play и App Store, и будет поддерживаться в дальнейшем.'
 
-section_about:
-  enable: true
-  title: About us
-  items:
-    - title: 25
-      description: WORKERS
-  
-    - title: 50
-      description: COMPLETED PROJECTS
-      
-    - title: 3 800
-      description: HOURS WORKED
-
-    - title: 28
-      description: HAPPY CLIENTS
-
-section_cta:
-  enable: true
-  title: Call to action
-  sub_title: 'Lorem ipsum ruba text pytin hyilo yobana blya tyt bydet call to action bogdan hay pridumaet'
 
 section_contacts:
   enable: true

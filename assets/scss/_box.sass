@@ -1,0 +1,47 @@
+.box
+	+flex(flex, center, flex-start, nowrap)
+	position: relative
+	margin: 0
+
+	&:hover
+		.box__img
+			&::after
+				opacity: 0
+
+	&__img
+		position: relative
+		+sz(220px, 220px)
+
+		&::after
+			content: ''
+			+ps(absolute, (l, 0), (r, 0), (t, 0), (b, 0))
+			margin: auto
+			display: block
+			//+sz(100%, 100%)
+			background: url('../images/bg10.svg') no-repeat 0 50%/120%
+			opacity: 0.8
+			transition: $trs
+
+		img
+			display: block
+			+sz(100%, 100%)
+			object-fit: contain
+
+	&__title
+		margin-bottom: 16px
+		+ft(24, 24, 400, $ffHeading)
+		color: $blue
+
+	&__text
+		+ft(16, 25, 600, $ffText)
+		color: $grey
+
+	&__wrap
+		display: grid
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))
+		gap: 20px
+		justify-content: center
+		margin-top: var(--sectionMt)
+		+maw($xsm)
+			gap: 0
+	   

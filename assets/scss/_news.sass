@@ -1,0 +1,76 @@
+.news
+	display: block
+	height: 100%
+	margin: 0
+	border-radius: $brs3
+	overflow: hidden
+	align-self: stretch
+	+theme(dark3)
+
+	&__wrap
+		margin-top: calc(var(--sectionMt)/2)
+		row-gap: $gap20
+
+	&__img
+		position: relative
+		width: 100%
+		padding-top: 50%
+		margin: 0
+		border-radius: 
+
+		& > *
+			+ps(absolute, (t, 0), (l, 0))
+			display: block
+			+sz(100%, 100%)
+			object-fit: cover
+
+	&__content
+		padding: 30px 30px 35px
+
+	&__header, 
+		+flex(flex, top, space-between, nowrap)
+		gap: 15px
+
+	&__info
+		+flex(flex, center, flex-start, nowrap)
+		gap: 15px
+		margin-top: 10px
+
+	&__text
+		margin-top: 15px
+		+ft(14, 18, 400, $ffText2)
+
+		p:last-child
+			margin-bottom: 0
+
+	&__time
+		//+ft(14, 14, 400, $ffText2)
+		+ft(12, 12, 400, $ffText2)
+		letter-spacing: -0.015em
+		color: rgba($white, 0.5)
+
+	&__cat
+		color: $blue1
+		//+ft(16, 25, 500, $ffText2)
+		+ft(14, 14*1.4, 500, $ffText2)
+		letter-spacing: 0.05em
+		text-transform: uppercase
+
+	&__read
+		color: $blue1
+		+ft(12, 12*1.4, 300, $ffText2)
+		white-space: nowrap
+
+	&__title
+		@extend %text-grad
+		+ft(24, 24*1.4, 900, $ffText2)
+
+	&:hover
+		&__text, &__title 
+			text-decoration: underline
+
+	+maw($xs)
+		&__read
+			display: none
+		&__title
+			font-size: 18px

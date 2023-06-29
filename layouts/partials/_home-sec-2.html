@@ -1,12 +1,34 @@
 {{ $data := index .Site.Data .Site.Language.Lang }}
 
-{{ if $data.homepage.section_benefits }}
-{{ with $data.homepage.section_benefits }}
+{{ if $data.homepage.section_achievements }}
+{{ with $data.homepage.section_achievements }}
 
 
-<section class="section section_2" id="solutions">
+<section class="section section_2" id="achievements">
     <div class="container">
-        
+        {{- partial "_hgroup.html" . -}}
+
+        <div class="counter__wrap">
+
+            {{ range .items }}
+            <div class="counter">
+              <div class="counter__content">
+                <div class="counter__num">
+                    {{ .title }}
+                </div>
+                <div class="counter__title">
+                    {{ .description }}
+                </div>
+              </div>
+                <div class="counter__overlay">
+                    {{ .title }}
+                </div>
+            </div>
+            {{ end }}
+
+        </div>
+        <img class="line" src="{{ `../images/line2.svg` | relURL }}" alt="{{ .title }}" />
+
 
     </div>
 </section>
