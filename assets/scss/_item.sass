@@ -1,0 +1,22 @@
+.item
+    &__wrap
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr))
+        gap: var(--gapMd)
+        margin-top: var(--gapMd)
+
+    &-styled
+        padding: var(--gapSm)
+        border-left: 2px solid $blue
+
+        &:last-child
+            grid-column: 2
+            grid-row: 2
+    
+    +maw($sm)
+        &__wrap
+            grid-template-columns: 1fr
+            display: block
+        &-styled
+            &:last-child
+                grid-row: 1

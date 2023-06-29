@@ -1,0 +1,19 @@
+.section
+    margin-top: var(--gapSection)
+    margin-bottom: var(--gapSection)
+    //background: url('../images/bg2.svg') no-repeat 50%/cover
+    &_cta
+        .row
+            //padding: 50px 30px
+            padding: 50px 
+            @extend %box
+    &_list
+        @extend .mt-lg-5
+        h2
+            text-align: center
+        +maw($lg)
+            text-align: left
+            h2
+                text-align: left
+    &_subscribe
+        margin-top: var(--sectionMt)

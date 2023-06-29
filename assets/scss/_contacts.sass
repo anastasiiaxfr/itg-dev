@@ -1,0 +1,107 @@
+.contacts
+	&__wrap
+		position: relative
+		//margin-top: 25px
+		margin-top: var(--sectionMt)
+		align-items: center
+
+	&__map
+		img
+			max-width: 100%
+			height: auto
+			object-fit: contain
+			filter: invert(1)
+
+	&__main
+		list-style-type: none
+		padding: 0    
+		margin-bottom: 0
+		a
+			+flex(flex, center, flex-start, nowrap)
+			gap: 20px
+			margin-top: 15px
+			margin-bottom: 15px
+			+ft(24, 36, 400, $ffText2)
+			transition: $trs
+			&:hover, &:focus, &:active
+				text-decoration: underline
+			+maw($md)
+				+ft(16, 16*1.5, 400, $ffText2)
+			
+
+	&__line
+		list-style-type: none
+		padding: 0
+		+ps(absolute, (r, 0), (l, auto), (b, 0), (t, 0))
+		+sz(auto, 100%)
+		display: flex
+		justify-content: center
+		flex-direction: column
+		gap: 25px
+		margin: auto
+		a 
+			position: relative
+			+flex(flex, center, center, nowrap)
+			+sz(50px, 50px)
+			padding: 10px
+			transition: $trs
+			filter: grayscale(1) brightness(2)
+			border-radius: 50%
+
+			&::after, &::before
+				content: ''
+				+ps(absolute, (t, 0), (b, 0), (l, 50%))
+				margin: auto
+				transform: translateX(-50%)
+				+sz(140%, 140%)
+				border-radius: 50%
+				box-shadow: 0 0 0 1px $blue
+				opacity: 0
+			&::before
+				+sz(180%, 180%)
+
+			&:hover, &:focus, &:active
+				filter: none
+				box-shadow: 0 0 0 1px $blue
+
+				&::after
+					opacity: 0.4
+				&::before
+					opacity: 0.1
+		+maw($xs)
+			justify-content: flex-start
+			gap: 0
+
+	&__title
+		position: relative
+		@extend %text
+		white-space: normal
+
+		&-overlay
+			+ps(absolute, (l, 0), (r, auto), (t, 0), (b, auto))
+			margin: auto
+			+flex(flex, center, flex-start, wrap)
+			+ft(70, 70, 400, $ffHeading)
+			white-space: normal
+			@extend %text-grad
+		+maw($md)
+			&, &-overlay
+				font-size: 4.0vmax
+			&
+				width: 80%
+				margin-bottom: $gapY
+				margin-top: $gapY
+		+maw($lsm)
+			&, &-overlay
+				font-size: 5.5vmax
+				
+		+maw($xs)
+			&, &-overlay
+				width: 100%
+				font-size: 4.5vmax
+				text-align: center
+				justify-content: center
+			
+		+miw($lg)
+			width: 80%
+			

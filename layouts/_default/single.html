@@ -1,21 +1,38 @@
 {{ define "main" }}
+<!-- BEGIN section -->
+{{- partial "header.html" . -}}
+<!-- END section -->
+{{ partial "_breadcrumbs.html" . }}
+<section class="page__single">
+  <div class="container">
+    <div class="row">
+      <div class="col">
 
-<div>
-    <!-- BEGIN section -->
-    {{- partial "header.html" . -}}
-    <!-- END section -->
-</div>
-<article class="page__single">
+        {{ if .Params.img }}
+        <img class="img-fluid w-auto mx-auto" src="{{ .Params.img | relURL }}" alt="{{ .Title }}">
+        {{ end }}
+       
+        <h4 class="h4">{{ .Title | upper | markdownify  }}</h4>
 
-    <div class="container">
-        <!-- {{- partial "_breadcrumbs.html" . -}} -->
-        <div class="page__container">
-            <h2 class="">
-                <!-- {{ .Title }} -->
-            </h2>
-            <!-- {{ .Content }} -->
+        <div class="single__meta"> 
+          {{ if .Params.author }}
+          <span class="">{{ .Params.author | title }}</span> 
+          {{ end }}
+         <div>
+          <span>{{ .PublishDate.Format "02.01.2006"  }} </span> / {{  .PublishDate.Format "15:04" }}
         </div>
-    </div>
+         </div>
+        <div class="single__content">{{ .Content }}</div>
 
-</article>
+        <!-- comments -->
+        {{ if .Site.DisqusShortname }}
+        <div class="mt-5">
+          {{ template "_internal/disqus.html" . }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</section>
+
 {{ end }}

@@ -2,15 +2,21 @@
 	<nav class="navbar navbar-expand-lg">
 		<div class="container">
 
-			{{ .Scratch.Set "logo_h" "55" }}
-			{{ .Scratch.Set "logo_w" "110" }}
+                {{ .Scratch.Set "logo_h" "55" }}
+			    {{ .Scratch.Set "logo_w" "110" }}
+			    {{- partial "_logo.html" . -}}
 
-			{{- partial "_logo.html" . -}}
+                <div class="collapse navbar-collapse">
+                    {{- partial "_menu.html" . -}}
+                </div>  
 
-			<div class="navbar-btn">
-				{{- partial "_lang.html" . -}}
-				{{- partial "_btn-auth.html" . -}}
-			</div>
+
+                <div class="navbar__cta">
+                    {{- partial "_lang.html" . -}}
+                    {{- partial "_btn-auth.html" . -}}
+                </div>
+               
+			
 		</div>
 	</nav>
 </header>

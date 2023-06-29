@@ -8,67 +8,26 @@ header
             max-width: 100px
 
 .navbar
-    //+ps(absolute, (t, 0), (l, 0))
-    width: 100%
-    padding: 23px 0
-    &-btn
+    padding-top: var(--navGap)
+    padding-bottom: var(--navGap)
+    &__cta
         +flex(flex, center, center, nowrap)
-        gap: 32px
-    +maw($xs)
-        margin-top: 10px
-        margin-bottom: 10px
-        &-btn
-            gap: 16px
-        .btn
-            padding: 10px 15px
+        gap: var(--navGap)
+    & > .container
+        flex-wrap: nowrap
 
-            span
-                display: none
-                
-        .lang-btn span
-            display: none
+.nav
+    +flex(flex, center, center, wrap)
+    gap: var(--navGap)
+    margin-left: auto
+    margin-right: var(--navGap)
+    +ft(16, 16, 400, $ffText2)
 
-
-.hero
-    margin-top: 185px
-    +maw($md)
-        margin-top: 15%
-
-    img
-        max-width: 100%
-
-    &__action
-        +ps(absolute, (b, 35px), (l, 0), (r, 0))
-        display: block
-        margin-left: auto
-        margin-right: auto
-        z-index: 100500 - 1
-        
-        svg
-            animation: toBtm infinite ease-in-out 1.5s
-
-    &__wrap
-        position: relative
-        background-image: url(../images/bg1.svg), url(../images/bg-hero.svg) 
-        background-size: cover, 70%
-        background-repeat: no-repeat
-        background-position: 100% 0, 50%
-        background-attachment: fixed
-
-        &:hover
-            &::after
-                opacity: 0
-
-        &::after
-            content: ''
-            +ps(absolute, (b, 0), (l, 0))
-            +sz(100%, 100%)
-            background: linear-gradient(0, $dark3 -10%, transparent 50%)
-            transition: $trs
-
-
-
-
+    &__link
+        transition: $trs
+        &:hover, &:active, &:focus
+            text-shadow: 0 0 0px, 0 0 1px 
+ 
 
 .footer
     +theme(dark2)
@@ -147,3 +106,42 @@ header
 
         li a
             +ft(12, 12*1.5, 400)
+
+
+
+.hero
+    margin-top: 185px
+    +maw($md)
+        margin-top: 15%
+
+    img
+        max-width: 100%
+
+    &__action
+        +ps(absolute, (b, 35px), (l, 0), (r, 0))
+        display: block
+        margin-left: auto
+        margin-right: auto
+        z-index: 100500 - 1
+        
+        svg
+            animation: toBtm infinite ease-in-out 1.5s
+
+    &__wrap
+        position: relative
+        background-image: url(../images/bg1.svg), url(../images/bg-hero.svg) 
+        background-size: cover, 70%
+        background-repeat: no-repeat
+        background-position: 100% 0, 50%
+        background-attachment: fixed
+
+        &:hover
+            &::after
+                opacity: 0
+
+        &::after
+            content: ''
+            +ps(absolute, (b, 0), (l, 0))
+            +sz(100%, 100%)
+            background: linear-gradient(0, $dark3 -10%, transparent 50%)
+            transition: $trs

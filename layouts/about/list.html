@@ -1,0 +1,60 @@
+{{ define "main" }} {{ $data := index .Site.Data .Site.Language.Lang }}
+
+<div>
+  <!-- BEGIN section -->
+  {{- partial "header.html" . -}}
+  <!-- END section -->
+</div>
+<article class="page__single">
+  <div class="container">
+    <h1 class="page__single-title">{{ .Title }}</h1>
+
+    {{ if $data.about.section_1 }} {{ with $data.about.section_1 }}
+    <section>
+      <div class="row">
+        <div class="col-xl-8">
+          {{ range .col }}
+          <p>{{ .paragraph }}</p>
+          {{ end }}
+        </div>
+        <div class="col-xl-4">
+          <div class="page__single-img">
+            <img src="{{ .img | relURL }}" alt="{{ .Title }}" />
+          </div>
+        </div>
+      </div>
+    </section>
+    {{ end }} {{ end }} {{ if $data.about.section_2 }} {{ with
+    $data.about.section_2 }}
+    <section class="my-lg-5">
+      <div class="row justify-content-between">
+        {{ range .col }}
+        <div class="col-lg-5">
+          {{ if .title }}
+          <h2>{{ .title }}</h2>
+          {{ end }}
+          <p>{{ .paragraph }}</p>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }} {{ end }} {{ if $data.about.section_3 }} {{ with
+    $data.about.section_3 }}
+    <section class="section_list">
+      <h2>{{ .title }}</h2>
+
+      <div class="list__wrap">
+        {{ range .items }}
+        <div class="list">{{ .item }}</div>
+        {{ end }}
+      </div>
+    </section>
+    {{ end }} {{ end }}
+
+    <!-- BEGIN section -->
+    {{ if $data.common.subscribe }} {{ with $data.common.subscribe }} {{-
+    partial "_subscribe.html" . -}} {{ end }} {{ end }}
+    <!-- END section -->
+  </div>
+</article>
+{{ end }}

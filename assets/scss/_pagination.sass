@@ -1,0 +1,15 @@
+.pagination
+    padding: 0
+    list-style-type: none
+    +flex(flex, center, center, wrap)
+    gap: 8px
+    &-item
+        +flex(flex, center, center, nowrap)
+        +sz(40px, 40px)
+        padding: 10px
+        +ft(12, 12, 600)
+        border: 1px solid $dark2
+        background-color: $dark2
+        &.active
+            border-color: $blue
+            color: $blue

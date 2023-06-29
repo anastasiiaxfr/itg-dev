@@ -1,31 +1,22 @@
-<div class="breadcrumbs__wrap">
-
-	<ol class="breadcrumbs" itemscope="itemscope" itemtype="http://schema.org/BreadcrumbList">
+<!-- BEGIN breadcrumbs -->
+<section aria-label="breadcrumb" class="breadcrumb__wrap">
+	<nav class="container">
+	<ul class="breadcrumb">
 		{{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
-	</ol>
-	{{ define "breadcrumbnav" }}
+	  </ul>
+	  
+	  {{ define "breadcrumbnav" }}
+		{{ if .p1.Parent }}
+		  {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )}}
+		{{ else if not .p1.IsHome }}
+		  {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )}}
+		{{ end }}
+		<li{{ if eq .p1 .p2 }} class="active"{{ end }}>
+		  <a href="{{ .p1.RelPermalink }}">{{ .p1.Title | truncate 50 }}</a>
+		</li>
+	  {{ end }}
+	
+	</div>
+</section>
 
-	{{ $crumbs := slice }}
-	{{ $parent := .p1.Parent }}
-	{{ if $parent }}
-	{{ $crumbs = $crumbs | append $parent }}
-	{{ end }}
-
-	{{ range $i, $arr := $crumbs }}
-	{{ if not .IsHome }}
-	{{ template "breadcrumbnav" (dict "p1" $parent "p2" $.p2 ) }}
-	{{ end }}
-	{{ end }}
-
-
-	<li {{ if eq .p1 .p2 }} class="active" {{ end }} itemprop="itemListElement" itemscope="itemscope"
-		itemtype="http://schema.org/ListItem">
-		<a href="{{ .p1.Permalink | relURL }}" itemprop="item">
-			<span itemprop="name">
-				{{ .p1.Title | truncate 75 }}
-			</span>
-			<meta itemprop="position" content="1" />
-		</a>
-	</li>
-	{{ end }}
-</div>
+<!-- END breadcrumbs -->

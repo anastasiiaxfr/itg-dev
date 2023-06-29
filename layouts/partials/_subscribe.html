@@ -1,24 +1,24 @@
-<section class="section section_subscribe" id="subscribe">
+<section class="section_subscribe" id="subscribe">
     <div class="container">
 
         <figure class="subscribe">
             <div class="subscribe__content">
                 <h3 class="subscribe__title">
-                    {{ .title }}
+                  {{ .title | markdownify }}
                 </h3>
                 <p class="subscribe__text">
-                    {{ .subtitle }}
+                    {{ .sub_title | markdownify }}
                 </p>
             </div>
 
             <div class="subscribe__btn">
-                <span class="btn__label">{{ .btn_label }}</span>
-                <a href="{{ .btn_url | safeURL }}" class="btn">
-                    {{ .btn_title }}
+                <a href="{{ .btn.url }}" class="btn">
+                    {{ .btn.title }}
                 </a>
             </div>
-
         </figure>
 
     </div>
 </section>
+
+

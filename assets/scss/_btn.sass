@@ -1,108 +1,111 @@
 .btn
-	+flex(inline-flex, center, center, nowrap)
-	padding: 8px 36px
-	+theme(grey)
-	border: none
-	border-radius: $brs
-	text-align: center
-	+ft(16, 24, 500, $ffText)
-	transition: $trs
+    +flex(inline-flex, center, center, nowrap)
+    padding: 8px 36px
+    +theme(grey)
+    border: none
+    border-radius: $brs
+    text-align: center
+    +ft(16, 24, 500, $ffText)
+    transition: $trs
 
-	&:hover, &:focus, &:active, &:focus-visible
-		box-shadow: none
+    +maw($xs)
+        padding: 8px 16px
 
-	&_top
-		+ps(fixed, (r, 10px), (b, 10px))
-		+flex(flex, center, center, wrap)
-		+sz(40px, 40px)
-		+theme(dark2)
-		border: none
-		svg
-			fill: $black
+    &:hover, &:focus, &:active, &:focus-visible
+        box-shadow: none
 
-	&__label
-		+ft(12, 14, 300, $ffText2)
+    &_top
+        +ps(fixed, (r, 10px), (b, 10px))
+        +flex(flex, center, center, wrap)
+        +sz(40px, 40px)
+        +theme(dark2)
+        border: none
+        svg
+            fill: $black
 
-	span
-		margin-right: 5px
+    &__label
+        +ft(12, 14, 300, $ffText2)
+
+    span
+        margin-right: 5px
 
 
 .lang-switcher
-	color: $white
-	button
-		padding: 0
-		border: none
-		background: transparent
-		text-transform: uppercase
-		+ft(16, 24, 400)
-		color: inherit
-		svg
-			margin-right: 10px
-		&::after
-			display: none	
-	.dropdown-menu
-		background-color: $dark3
-		color: $white
-		min-width: 5rem
-		margin-top: 5px
-		padding: 5px 10px
-		button
-			&:hover, &:active, &:focus
-				font-weight: 500
+    color: $white
+    button
+        padding: 0
+        border: none
+        background: transparent
+        text-transform: uppercase
+        +ft(16, 24, 400)
+        color: inherit
+        svg
+            margin-right: 10px
+        &::after
+            display: none	
+    .dropdown-menu
+        background-color: $dark3
+        color: $white
+        min-width: 5rem
+        margin-top: 5px
+        padding: 5px 10px
+        button
+            &:hover, &:active, &:focus
+                font-weight: 500
 
 
 .soc
-	&--tm
-		width: auto
-	
-		a
-			+flex(flex, center, center, nowrap)
-			gap: $gap20
-			transition: $trs
+    &--tm
+        width: auto
+    
+        a
+            +flex(flex, center, center, nowrap)
+            gap: $gap20
+            transition: $trs
 
-			&:hover, &:focus, &:active
-				color: $black
-		
+            &:hover, &:focus, &:active
+                color: $black
+        
 .form
-	+flex(flex, center, flex-start, nowrap)
-	flex-direction: column
-	gap: 10px
-	input, textarea
-		width: 100%
-		padding: 13px 25px
-		+flex(flex, center, flex-start, nowrap)
-		background-color: transparent
-		border: 1px solid $dark5
-		border-radius: $brs3
-		color: $white
-		resize: none
-		&:hover, &:active, &:focus, &:focus-within
-			border-color: $blue
-	button
-		margin-top: 45px
-		margin-right: auto
-		padding: 15px 50px
-		background: $grad
-		color: $white
-		border-radius: $brs3
-		//+ft(22, 33, 600, $ffText)
-		+ft(20, 20*1.2, 500, $ffText)
-		letter-spacing: 0.05em
-		transition: $trs
-		&:hover, &:active, &:focus
-			color: $white
-			background: $grad0
-			box-shadow: $bxsd
-		+maw($xsm)
-			width: 100%
-			margin-top: 20px
+    +flex(flex, center, flex-start, nowrap)
+    flex-direction: column
+    gap: 10px
+    input, textarea
+        width: 100%
+        padding: 13px 25px
+        +flex(flex, center, flex-start, nowrap)
+        background-color: transparent
+        border: 1px solid $dark5
+        border-radius: $brs3
+        color: $white
+        resize: none
+        &:hover, &:active, &:focus, &:focus-within
+            border-color: $blue
+    button
+        margin-top: 45px
+        margin-right: auto
+        padding: 15px 50px
+        background: $grad
+        color: $white
+        border-radius: $brs3
+        //+ft(22, 33, 600, $ffText)
+        +ft(20, 20*1.2, 500, $ffText)
+        letter-spacing: 0.05em
+        transition: $trs
+        &:hover, &:active, &:focus
+            color: $white
+            background: $grad0
+            box-shadow: $bxsd
+        +maw($xsm)
+            width: 100%
+            margin-top: 20px
 
 
 .btn
-	&__wrap
-		+flex(flex, center, flex-start, nowrap)
-		gap: $gap20
-	&__text
-		+ft(20, 30, 400, $ffText)
-		letter-spacing: 0.01em
-		color: $grey1
+    &__wrap
+        +flex(flex, center, flex-start, nowrap)
+        gap: $gap20
+    &__text
+        +ft(20, 30, 400, $ffText)
+        letter-spacing: 0.01em
+        color: $grey1

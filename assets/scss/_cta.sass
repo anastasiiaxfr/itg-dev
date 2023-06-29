@@ -1,0 +1,24 @@
+.cta
+	&__title
+		+ft(48, 48, 700, $ffText)
+		@extend %text-grad
+	&__description
+		max-width: 95%
+		margin-top: $gap20 + 10px
+		+ft(16, 24, 400, $ffText)
+		letter-spacing: 0.1em
+	+maw($md)
+		&__title
+			+ft(32, 48, 700, $ffText2)
+		&__description
+			max-width: 100%
+			+ft(14, 14*1.5, 400, $ffText)
+		
+	+maw($xsm)
+		&__title, &__description
+			text-align: center
+		
+	+maw($xxs)
+		&__title
+			+ft(32, 48, 700, $ffText2)
+
