@@ -58,7 +58,7 @@
           <div class="swiper swiper-blogs">
             <div class="swiper-wrapper">
               {{ $relatedPosts := and (where .Site.RegularPages "Section"
-              "blog") }} {{ range $index, $post := where $relatedPosts
+              "blog" | first 6) }} {{ range $index, $post := where $relatedPosts
               "Params.title" "!=" .Title }}
               <article class="swiper-slide">{{ .Render "post"}}</article>
               {{ end }}

@@ -1,0 +1,35 @@
+.modal
+	position: relative
+	max-width: 750px
+	+sz(90%, auto)
+	margin: 30px auto
+	padding: 30px 40px
+
+	border-radius: $brs3
+	background-color: rgba($white, 0.1)
+	backdrop-filter: blur(15px)
+	color: $white
+
+	&__overlay
+		+ps(fixed, (t, 0), (l, 0))
+		z-index: 100500
+		+sz(100%, 100%)
+		+flex(flex, center, center, nowrap)
+		background-color: rgba($black, 0.5)
+		display: none
+
+	&__header
+		+flex(flex, center, space-between, nowrap)
+		margin-bottom: var(--gapSm)
+
+	&__close
+		background: transparent
+		border: none
+
+	&__title
+		+ft(20, 20, 700)
+
+	+maw($xxs)
+		padding: 15px
+
+

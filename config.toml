@@ -28,8 +28,6 @@ languageCode = "uk"
 languageName = "Укр"
 weight = 3
 
-
-
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 [sitemap]
@@ -37,6 +35,18 @@ ChangeFreq = "daily"
 Priority = 0.6
 Weight = [["main", "1"], ["sub2", "0.8"], ["sub3", "0.6"]]
 enableRobotsTXT = true
+
+[security]
+  enableInlineShortcodes = false
+  [security.exec]
+    allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+    osEnv = ['(?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+)$']
+  [security.funcs]
+    getenv = ['^HUGO_', '^CI$']
+  [security.http]
+    methods = ['(?i)GET|POST']
+    urls = ['.*']
+
 
 [params]
 CIO_site_id = "XXX"
@@ -59,7 +69,10 @@ search = true
 # soc
 tm = "https://t.me/ITG_club"
 
-
+[[params.plugins.js]]
+link = "plugins/fb/gstatic.com_firebasejs_8.10.1_firebase-app.js"
+[[params.plugins.js]]
+link = "plugins/fb/gstatic.com_firebasejs_8.10.1_firebase-firestore.js"
 [[params.plugins.css]]
 link = "plugins/swiper/swiper-bundle.min.css"
 [[params.plugins.js]]
@@ -228,7 +241,7 @@ name = "Services"
 weight = 2
 
 [[Languages.en.menu.main]]
-URL = "/job"
+URL = "/"
 name = "Job"
 weight = 3
 
@@ -254,7 +267,7 @@ name = "Наши услуги"
 weight = 2
 
 [[Languages.ru.menu.main]]
-URL = "/job"
+URL = "/"
 name = "Карьера"
 weight = 3
 
@@ -280,7 +293,7 @@ name = "Наші послуги"
 weight = 2
 
 [[Languages.ua.menu.main]]
-URL = "/job"
+URL = "/"
 name = "Кар'єра"
 weight = 3
 
@@ -358,7 +371,7 @@ hasChildren = true
     [[Languages.en.menu.footer]]
     parent = "resources"
     name = "Cases"
-    URL = "/cases"
+    URL = "/services"
     weight = 2
 
 [[Languages.en.menu.footer]]
@@ -471,7 +484,7 @@ hasChildren = true
     [[Languages.ru.menu.footer]]
     parent = "resources"
     name = "Кейсы"
-    URL = "/cases"
+    URL = "/services"
     weight = 2
 
 [[Languages.ru.menu.footer]]
@@ -584,7 +597,7 @@ hasChildren = true
     [[Languages.ua.menu.footer]]
     parent = "resources"
     name = "Кейсы"
-    URL = "/cases"
+    URL = "/services"
     weight = 2
 
 [[Languages.ua.menu.footer]]

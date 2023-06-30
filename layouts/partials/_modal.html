@@ -1,0 +1,95 @@
+<section class="modal__overlay">
+	<div class="modal">
+		<div class="modal__header">
+			<div class="modal__title"> 
+				Contact Us
+			</div>
+			<button class="modal__close">
+				<svg class="icon" width="25" height="25">
+					<use xlink:href="#close"></use>
+				</svg>
+			</button>
+		</div>
+		<div class="modal__body">
+
+			<form action="/" method="POST" class="form-modal" novalidate>
+				<div class="form-modal__row">
+					<label for="" class="form-modal__label"> 
+						<span>{{ i18n "name" }}* </span>
+						<div class="form-modal__error">
+							*{{ i18n "form-error" }}	
+						</div>
+					</label>
+					<input type="text" class="form-modal__field" required id="form-modal__name" name="form-modal__name" placeholder='{{ i18n "placeholder-name" }}'>
+				</div>
+				<div class="form-modal__row">
+					<label for="" class="form-modal__label"> 
+						<span> Email* </span> 
+						<div class="form-modal__error">
+							*{{ i18n "form-error" }}	
+						</div>
+					</label>
+					<input type="text" class="form-modal__field" required id="form-modal__email" name="form-modal__email" placeholder="mail@mail.com">
+				</div>
+				<div class="form-modal__row">
+					<label for="" class="form-modal__label"> 
+						<span>{{ i18n "tel" }}*</span>
+						<div class="form-modal__error">
+							*{{ i18n "form-error" }}	
+						</div>
+					</label>
+					<input type="text" class="form-modal__field" required id="form-modal__tel" name="form-modal__tel" placeholder="380ХХХХХХХХХХ">
+				</div>
+				<div class="form-modal__row">
+					<label for="" class="form-modal__label"> 
+					<span>
+						{{ i18n "question" }}*
+					</span> 
+					<div class="form-modal__error">
+						*{{ i18n "form-error" }}	
+					</div>
+					</label>
+					<textarea class="form-modal__field" required id="form-modal__questiion" name="form-modal__questiion" placeholder="{{ i18n "placeholder-question" }}" row="3"></textarea>
+					
+				</div>
+			
+				
+					<input type="submit" class="form-modal__btn" value="{{ i18n "send" }}">
+					
+				
+			</form>
+
+		</div>
+	</div>
+</section>
+
+<script>
+	const modal_toggle = document.querySelectorAll('[data-modal-toggle="modal"]');
+	const modal_close = document.querySelector('.modal__close');
+	const modal = document.querySelector('.modal__overlay');
+	const forms = document.querySelectorAll('form');
+  
+  
+	modal_toggle.forEach(i => {
+	  i.addEventListener('click', function (e) {
+		e.preventDefault()
+		modal.classList.add('d-flex')
+		modal.classList.remove('d-none')
+	  })
+	});
+  
+	modal_close.addEventListener('click', function () {
+	  modal.classList.remove('d-flex')
+	  modal.classList.add('d-none')
+	  forms.forEach(i => i.reset())
+	});
+  
+	modal.addEventListener('click', function (e) {
+	  if (e.target === modal) {
+		modal.classList.remove('d-flex')
+		modal.classList.add('d-none')
+		forms.forEach(i => i.reset())
+	  }
+	});
+  
+  </script>

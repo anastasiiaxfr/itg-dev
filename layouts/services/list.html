@@ -1,25 +1,131 @@
 {{ define "main" }}
 {{ $lang := .Page.Lang }}
-{{ $data := index $.Site.Data }}
-
+{{ $data := index .Site.Data .Site.Language.Lang }}
 
 <div>
   <!-- BEGIN section -->
   {{- partial "header.html" . -}}
   <!-- END section -->
 </div>
-<article class="page__single">
+<article class="page">
 
-  <div class="container">
+  <div class="container services__list">
     <h1>{{ .Title }}</h1>
 
 
+    {{ if $data.services.content }}
+    {{ with $data.services.content }}
+
+
+    <div class="services__block swiper-list-1">
+      <div class="swiper-wrapper">
+        {{ range $i, $arr := .section_1 }}
+        <div class="swiper-slide">
+          <div class="services__wrap">
+            <div class="services">
+              <div class="services__content">
+                <div class="services__title">
+                  {{ .title }}
+                </div>
+                <p>
+                  {{ .paragraph }}
+                </p>
+              </div>
+              <div class="services__img">
+                <img src="{{ .img | relURL }}" alt="{{ .title }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{- $class1 := "1" -}}
+      {{- partial "_slider-toggle.html" (dict "class" $class1) -}}
+    </div>
+
+
+    <div class="services__block swiper-list-2">
+      <div class="swiper-wrapper">
+        {{ range $i, $arr := .section_2 }}
+        <div class="swiper-slide">
+          <div class="services__wrap">
+            <div class="services">
+              <div class="services__content">
+                <div class="services__title">
+                  {{ .title }}
+                </div>
+                <p>
+                  {{ .paragraph }}
+                </p>
+              </div>
+              <div class="services__img">
+                <img src="{{ .img | relURL }}" alt="{{ .title }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{- $class2 := "2" -}}
+      {{- partial "_slider-toggle.html" (dict "class" $class2) -}}
+    </div>
+
+    <div class="services__block swiper-list-3">
+      <div class="swiper-wrapper">
+        {{ range $i, $arr := .section_3 }}
+        <div class="swiper-slide">
+          <div class="services__wrap">
+            <div class="services">
+              <div class="services__content">
+                <div class="services__title">
+                  {{ .title }}
+                </div>
+                <p>
+                  {{ .paragraph }}
+                </p>
+              </div>
+              <div class="services__img">
+                <img src="{{ .img | relURL }}" alt="{{ .title }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{- $class3 := "3" -}}
+      {{- partial "_slider-toggle.html" (dict "class" $class3) -}}
+    </div>
+
+    <div class="services__block swiper-list-4">
+      <div class="swiper-wrapper">
+        {{ range $i, $arr := .section_4 }}
+        <div class="swiper-slide">
+          <div class="services__wrap">
+            <div class="services">
+              <div class="services__content">
+                <div class="services__title">
+                  {{ .title }}
+                </div>
+                <p>
+                  {{ .paragraph }}
+                </p>
+              </div>
+              <div class="services__img">
+                <img src="{{ .img | relURL }}" alt="{{ .title }}">
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      {{- $class4 := "4" -}}
+      {{- partial "_slider-toggle.html" (dict "class" $class4) -}}
+    </div>
+
+
+    {{ end }}
+    {{ end }}
 
   </div>
-
 </article>
-
-
-
 {{ end }}
-

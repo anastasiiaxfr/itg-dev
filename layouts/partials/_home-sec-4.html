@@ -23,11 +23,36 @@
             <div class="col-md-6">
 
                 <form action="/" method="POST" novalidate class="form">
-                    <input type="text" placeholder={{ i18n "name" }} name="user_name" id="user_id" autocomplete="off" required>
-                    <input type="text" placeholder="Email" name="user_email" id="user_id" autocomplete="off" required>
-                    <input type="text" placeholder={{ i18n "tel" }} name="user_tel" id="user_tel" autocomplete="off" required>
-                    <textarea placeholder={{ i18n "question" }} name="user_msg" id="user_msg"></textarea>
-                    <button class="btn">{{ i18n "send" }}</button>
+                    <div class="form__row">
+                        <input type="text" placeholder={{ i18n "name" }} name="user_name" id="user_id" autocomplete="off" required class="form__field">
+                        <div class="form__error">
+                            *{{ i18n "form-error" }}
+                        </div>
+                    </div>
+                    
+                    <div class="form__row">
+                        <input type="text" placeholder="Email" name="user_email" id="user_email" autocomplete="off" required class="form__field">
+                        <div class="form__error">
+                            *{{ i18n "form-error" }}
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <input type="text" placeholder={{ i18n "tel" }} name="user_tel" id="user_tel" autocomplete="off" required class="form__field">
+                        <div class="form__error">
+                            *{{ i18n "form-error" }}
+                        </div>
+                    </div>
+                    <div class="form__row">
+                        <textarea placeholder={{ i18n "question" }} name="user_msg" id="user_msg" class="form__field"></textarea>
+                        <div class="form__error">
+                            *{{ i18n "form-error" }}
+                        </div>
+                    </div>
+                    <div class="form__success">
+                        {{ i18n "form-success" }}
+                    </div>
+                    <button class="btn" type="submit">{{ i18n "send" }}</button>
+                 
                 </form>
 
             </div>

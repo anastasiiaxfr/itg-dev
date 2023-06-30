@@ -3,12 +3,16 @@ $data.homepage.section_services }} {{ with $data.homepage.section_services }}
 
 <section class="section section_3" id="services">
   <div class="container">
-    {{- partial "_hgroup.html" . -}}
+    <hgroup class="hgroup">
+      <h2>{{ .title }}</h2>
+      {{- $class0 := "0" -}}
+      {{- partial "_slider-toggle.html" (dict "class" $class0) -}}
+    </hgroup>
 
     <div class="swiper swiper-services">
     <div class="card__wrapper swiper-wrapper">
       {{ range $i, $arr := .items }}
-      <div class="card {{ if le $i 0 }} active {{ end }} swiper-slide">
+      <div class="card swiper-slide">
         <img src="{{ .img | relURL }}" alt="{{ .title }}" width="630" height="630" class="card__img" />
         <div class="card__content">
           <div class="card__title">
@@ -29,18 +33,7 @@ $data.homepage.section_services }} {{ with $data.homepage.section_services }}
       </div>
       {{ end }}
     </div>
-    <div class="swiper-services-toggle">
-        <div class="swiper-services-toggle-prev">
-            <svg class="icon" width="20" height="20">
-                <use xlink:href="#arr-rt"></use>
-            </svg>
-        </div>
-        <div class="swiper-services-toggle-next">
-            <svg class="icon" width="20" height="20">
-                <use xlink:href="#arr-lt"></use>
-            </svg>
-        </div>
-    </div>
+    
 </div>
   </div>
 </section>

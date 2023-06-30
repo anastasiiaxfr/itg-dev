@@ -62,17 +62,26 @@ button, a, input
         width: 100vw
         &-toggle
             @extend .container
-            +ps(absolute, (t, 0), (b, 0), (l, 0))
+            //+ps(absolute, (t, 0), (b, 0), (l, 0))
             z-index: 100
-            +sz(100%, 40px)
-            +flex(flex, center, space-between, nowrap)
+            //+sz(100%, 40px)
+            +flex(flex, center, flex-end, nowrap)
+            gap: var(--gap)
             margin: auto
-            &-prev, &-next
+            &-prev, &-next, &__item
                 +flex(flex, center, center, nowrap)
                 +sz(40px, 40px)
                 padding: 5px
                 border-radius: 50%
                 background: $grad
+
+    &-list
+        .swiper-services-toggle
+            display: none
+            +ps(absolute, (t, 0), (b, 0))
+            +sz(100%, 40px)
+            justify-content: space-between
+            padding: 0
 
     +maw($xs)
         &-services

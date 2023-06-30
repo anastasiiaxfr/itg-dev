@@ -1,29 +1,34 @@
-- id: login
-  translation: Регистрация
-
-- id: signup
-  translation: Вход
-
-- id: consultation
-  translation: Напишите нам
-
 - id: send
-  translation: Отправить
+  translation: Відправити
 
 - id: name
-  translation: Имя Фамилия
+  translation: Iм'я та прізвище
 
 - id: tel
   translation: Телефон
 
 - id: question
-  translation: Ваш вопрос
-
-- id: author
-  translation: Автор
+  translation: Ваше запитання
 
 - id: published
   translation: Опулiковано
 
 - id: cat
   translation: Категорiя
+
+- id: form-error
+  translation: "Обов'язкове поле"
+
+- id: placeholder-name
+  translation: "Введіть ім'я та прізвище"
+
+- id: placeholder-question
+  translation: "Введіть ваш питання"
+
+- id: form-success
+  translation: "Ваші дані надіслано!"
+
+
+
+
+

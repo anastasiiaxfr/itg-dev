@@ -1,0 +1,14 @@
+{{- $class := .class -}}
+
+<div class="swiper-services-toggle">
+  <div class="swiper-services-toggle__item swiper-services-toggle-prev-{{ if $class }}{{ $class }}{{ end }}">
+    <svg class="icon" width="20" height="20">
+      <use xlink:href="#arr-rt"></use>
+    </svg>
+  </div>
+  <div class="swiper-services-toggle__item swiper-services-toggle-next-{{ if $class }}{{ $class }}{{ end }}">
+    <svg class="icon" width="20" height="20">
+      <use xlink:href="#arr-lt"></use>
+    </svg>
+  </div>
+</div>

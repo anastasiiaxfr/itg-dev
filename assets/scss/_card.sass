@@ -33,7 +33,6 @@
                 transition: $trs
 
     &__content
-        +ps(absolute, (t, 0), (l, 0))
         +sz(100%, 100%)
         padding: 45px 50px
         overflow: hidden
@@ -41,7 +40,7 @@
     &__overlay
         overflow: hidden
         opacity: 0
-        height: 100%
+        //height: 100%
         +flex(flex, center, flex-start, wrap)
         
         +maw($md)
@@ -50,10 +49,10 @@
 
         +maw($xs)
             +ft(10, 10*1.4, 400)
-            
 
     &__img
-        +sz(100%, 100%)
+        +ps(absolute, (b, 0), (r, 0))
+        +sz(100%, auto)
         display: block
         object-fit: contain
         margin-top: auto
@@ -61,6 +60,7 @@
 
     &__title
         +flex(flex, center, space-between, nowrap)
+        gap: var(--gap)
         +ft(32, 48, 600, $ffText)
         color: $white
 

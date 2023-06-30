@@ -29,6 +29,34 @@
     span
         margin-right: 5px
 
+.btn
+    &__wrap
+        +flex(flex, center, flex-start, nowrap)
+        gap: $gap20
+    &__text
+        +ft(20, 30, 400, $ffText)
+        letter-spacing: 0.01em
+        color: $grey1
+
+.button
+    margin-top: 45px
+    margin-right: auto
+    padding: 15px 50px
+    background: $grad
+    color: $white
+    border-radius: $brs3
+    //+ft(22, 33, 600, $ffText)
+    +ft(20, 20*1.2, 500, $ffText)
+    letter-spacing: 0.05em
+    transition: $trs
+    &:hover, &:active, &:focus
+        color: $white
+        background: $grad0
+        box-shadow: $bxsd
+    +maw($xsm)
+        width: 100%
+        margin-top: 20px
+
 
 .lang-switcher
     color: $white
@@ -53,7 +81,6 @@
             &:hover, &:active, &:focus
                 font-weight: 500
 
-
 .soc
     &--tm
         width: auto
@@ -70,6 +97,8 @@
     +flex(flex, center, flex-start, nowrap)
     flex-direction: column
     gap: 10px
+    &__row
+        width: 100%
     input, textarea
         width: 100%
         padding: 13px 25px
@@ -81,31 +110,82 @@
         resize: none
         &:hover, &:active, &:focus, &:focus-within
             border-color: $blue
+    &__error, &__success
+        width: 100%
+        margin-top: var(--gapXs)
+        color: $red
+        +ft(12, 12, 500)
+        text-align: left
+        display: none
+    &__success
+        color: $blue
     button
-        margin-top: 45px
-        margin-right: auto
-        padding: 15px 50px
-        background: $grad
-        color: $white
-        border-radius: $brs3
-        //+ft(22, 33, 600, $ffText)
-        +ft(20, 20*1.2, 500, $ffText)
-        letter-spacing: 0.05em
-        transition: $trs
-        &:hover, &:active, &:focus
-            color: $white
-            background: $grad0
-            box-shadow: $bxsd
-        +maw($xsm)
-            width: 100%
-            margin-top: 20px
+        @extend .button
 
+.form-modal
+    display: grid
+    grid-template-columns: 1fr 1fr
+    gap: var(--gap)
 
-.btn
-    &__wrap
+    +maw($lsm)
+        grid-template-columns: 1fr 
+
+    & > div
+        +flex(flex, flex-start, center, nowrap)
+        flex-direction: column
+
+    &__error
+        +ft(12, 12, 600)
+        color: $red
+        display: none
+
+    &__label
+        +flex(flex, center, space-between, wrap)
+        gap: var(--gapXs)
+        width: 100%
+        margin-bottom: 10px
+        +ft(14, 14, 400)
+    &__field
         +flex(flex, center, flex-start, nowrap)
-        gap: $gap20
-    &__text
-        +ft(20, 30, 400, $ffText)
-        letter-spacing: 0.01em
-        color: $grey1
+        +sz(100%, 45px)
+        padding: 10px 15px
+        background-color: rgba($white, 0.2)
+        border: 1px solid rgba($white, 0.2)
+        color: $white
+        border-radius: 5px
+        resize: none
+        +ft(14, 14, 400)
+
+        &:focus, &:active, &:hover
+            box-shadow: none
+            appearance: none
+            outline: none
+            border: 1px solid inherit
+
+    &__btn
+        width: 100%
+        margin-top: var(--gap)
+        @extend .button
+        border: none
+        border-radius: 5px
+        +ft(16, 16, 400)
+
+    &__row
+        width: 100% 
+        grid-column: 1
+        flex: 1
+
+        &:last-of-type
+            grid-column: 2
+            grid-row-start: 1
+            grid-row-end: 5
+
+            +maw($lsm)
+                grid-column: 1
+                grid-row-start: 4
+    
+    textarea
+        flex: 1
+
+            
+
