@@ -4,12 +4,14 @@
     +flex(flex, center, center, wrap)
     gap: 8px
     margin: 0
+    text-align: center
     &__wrap
         margin-bottom: var(--gapMd)
-        margin-top: var(--gapMd)
+        margin-top: 10px
     li
         &::after
             content: '/'
+            padding-left: 4px
         &:last-child
             &::after
                 content: none

@@ -18,17 +18,21 @@ a
 
 .page
     h1
-        @extend .h1, .text-center
-   
+        @extend .h1, .text-center, .mb-0
     &__wrapper
         overflow: hidden
     &__single
         padding-top: var(--sectionMt)
         padding-bottom: var(--gapSection)
-        h1
-            @extend .h1, .text-center, .mb-5
-        h2
-            @extend .h2, %text-grad
+
+        // h1, h2, h3, h4, h5, h6
+        //     font-family: $ffText2
+        //     font-weight: bold
+        // h1
+        //     @extend .h1, .text-center, .mb-0
+        // h2
+        //     @extend .h2, %text-grad
+
         &-img
             margin: var(--gapMd) auto 
             border-radius: $brs3

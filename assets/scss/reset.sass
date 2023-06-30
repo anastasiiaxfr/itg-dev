@@ -45,3 +45,31 @@ button, a, input
 		flex-direction: column
 	&__wrapper
 		flex: 1 0 auto
+
+.swiper
+    position: relative
+    &-toggle
+        width: 100%
+        //+ps(absolute, (t, auto), (l, 0))
+        //z-index: 1000
+        +flex(flex, center, space-between, nowrap)
+    &-button-prev, &-button-next
+        @extend .d-none
+
+    &-slide
+        height: auto !important
+    &-services
+        width: 100vw
+        &-toggle
+            @extend .container
+            +ps(absolute, (t, 0), (b, 0), (l, 0))
+            z-index: 100
+            +sz(100%, 40px)
+            +flex(flex, center, space-between, nowrap)
+            margin: auto
+            &-prev, &-next
+                +flex(flex, center, center, nowrap)
+                +sz(40px, 40px)
+                padding: 5px
+                border-radius: 50%
+                background: $grad

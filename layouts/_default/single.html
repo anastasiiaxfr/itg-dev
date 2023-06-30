@@ -2,34 +2,81 @@
 <!-- BEGIN section -->
 {{- partial "header.html" . -}}
 <!-- END section -->
-{{ partial "_breadcrumbs.html" . }}
-<section class="page__single">
+
+<section class="post">
   <div class="container">
+    <div>
+      <h1 class="text-center mb-0">{{ .Section | title }}</h1>
+      {{ partial "_breadcrumbs.html" . }}
+    </div>
     <div class="row">
-      <div class="col">
+      <div class="post__wrap">
+        <div class="post__header">
+          <h2>{{ .Title | upper | markdownify }}</h2>
+          <div class="post__meta">
+            {{ if .Params.author }}
+            <div class="">
+              <b>{{ i18n "author"}}:</b> {{ .Params.author | title }}
+            </div>
+            {{ end }}
+            
+            {{ if .Params.cat }}
+            <div>
+              <b>{{ i18n "cat" }}:</b>
+              {{ .Params.cat }} 
+            </div>
+            {{ end }}
 
-        {{ if .Params.img }}
-        <img class="img-fluid w-auto mx-auto" src="{{ .Params.img | relURL }}" alt="{{ .Title }}">
-        {{ end }}
-       
-        <h4 class="h4">{{ .Title | upper | markdownify  }}</h4>
+            <div>
+              <b>{{ i18n "published" }}: </b>
+              <span>{{ .PublishDate.Format "02.01.2006" }}</span>/<span
+                >{{.PublishDate.Format "15:04" }}</span
+              >
+            </div>
 
-        <div class="single__meta"> 
-          {{ if .Params.author }}
-          <span class="">{{ .Params.author | title }}</span> 
-          {{ end }}
-         <div>
-          <span>{{ .PublishDate.Format "02.01.2006"  }} </span> / {{  .PublishDate.Format "15:04" }}
+          </div>
         </div>
-         </div>
-        <div class="single__content">{{ .Content }}</div>
+        {{ if .Params.img }}
+        <div class="post__img">
+          <img
+            class="img-fluid w-auto mx-auto"
+            src="{{ .Params.img | relURL }}"
+            alt="{{ .Title }}"
+          />
+        </div>
+        {{ end }}
+
+        <div class="post__content">{{ .Content }}</div>
 
         <!-- comments -->
         {{ if .Site.DisqusShortname }}
-        <div class="mt-5">
-          {{ template "_internal/disqus.html" . }}
-        </div>
+        <div class="mt-5">{{ template "_internal/disqus.html" . }}</div>
         {{ end }}
+
+        <!-- related -->
+        <div class="row">
+          <div class="swiper swiper-blogs">
+            <div class="swiper-wrapper">
+              {{ $relatedPosts := and (where .Site.RegularPages "Section"
+              "blog") }} {{ range $index, $post := where $relatedPosts
+              "Params.title" "!=" .Title }}
+              <article class="swiper-slide">{{ .Render "post"}}</article>
+              {{ end }}
+            </div>
+          </div>
+          <div class="swiper-toggle">
+            <div class="swiper-toggle-prev">
+                <svg class="icon" width="35">
+                    <use xlink:href="#arr-right"></use>
+                </svg>
+            </div>
+            <div class="swiper-toggle-next">
+                <svg class="icon" width="35">
+                    <use xlink:href="#arr-left"></use>
+                </svg>
+            </div>
+        </div>
+        </div>
       </div>
     </div>
   </div>

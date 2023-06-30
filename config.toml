@@ -5,22 +5,25 @@ disableLanguages = ["ru"]
 paginate = "10"
 relativeURLs = true
 summaryLength = "50"
-title = "International Trade Group"
+
 [Languages.en]
 contentDir = "content/en"
 home = "Home"
 languageCode = "en-us"
 languageName = "En"
 weight = 1
+title = "Home"
 [Languages.ru]
 contentDir = "content/ru"
 home = "Главная"
 languageCode = "ru"
 languageName = "Ру"
 weight = 2
+title = "Главная"
 [Languages.ua]
 contentDir = "content/ua"
 home = "Головна"
+title = "Головна"
 languageCode = "uk"
 languageName = "Укр"
 weight = 3
@@ -56,6 +59,11 @@ search = true
 # soc
 tm = "https://t.me/ITG_club"
 
+
+[[params.plugins.css]]
+link = "plugins/swiper/swiper-bundle.min.css"
+[[params.plugins.js]]
+link = "plugins/swiper/swiper-bundle.min.js"
 # [[params.plugins.js]]
 # link = "plugins/js/jquery.min.js"
 # [[params.plugins.js]]
@@ -72,7 +80,7 @@ enable = true
 preloader = ""
 
 [taxonomies]
-category = "categories"
+cat = "cat"
 tag = "tags"
 
 

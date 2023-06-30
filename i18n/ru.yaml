@@ -18,3 +18,12 @@
 
 - id: question
   translation: Ваш вопрос
+
+- id: author
+  translation: Автор
+
+- id: published
+  translation: Опубликовано
+
+- id: cat
+  translation: Категория

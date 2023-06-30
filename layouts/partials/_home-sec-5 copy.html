@@ -1,0 +1,40 @@
+{{ $data := index .Site.Data .Site.Language.Lang }} {{ if
+$data.homepage.section_services }} {{ with $data.homepage.section_services }}
+
+<section class="section section_3" id="solutions">
+  <div class="container">
+    {{- partial "_hgroup.html" . -}}
+
+    <div class="swiper-services">
+    <div class="services__wrapper swiper swiper-wrapper">
+      {{ range $i, $arr := .items }}
+      <div class="item {{ if le $i 0 }} active {{ end }} swiper-slide">
+        <img src="{{ .img | relURL }}" alt="{{ .title }}" class="services__img" />
+        <div class="services__content">
+          <div class="services__title">
+
+            {{ .title }}
+
+            <svg class="icon services__toggle" width="25" height="25">
+                <use xlink:href="#arr-tr"></use>
+            </svg>
+
+          </div>
+          <div class="services__overlay">
+            <div class="services__text">
+              {{ .services }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+    <div class="swiper-services-toggle">
+        <div class="swiper-services-toggle-prev"></div>
+        <div class="swiper-services-toggle-next"></div>
+    </div>
+</div>
+  </div>
+</section>
+
+{{ end }} {{ end }}

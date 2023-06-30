@@ -7,7 +7,7 @@
 </div>
 <article class="page__single">
   <div class="container">
-    <h1 class="page__single-title">{{ .Title }}</h1>
+    <h1 class="h1 text-center mb-5">{{ .Title }}</h1>
 
     {{ if $data.about.section_1 }} {{ with $data.about.section_1 }}
     <section>
@@ -31,7 +31,7 @@
         {{ range .col }}
         <div class="col-lg-5">
           {{ if .title }}
-          <h2>{{ .title }}</h2>
+          <h2 class="h2">{{ .title }}</h2>
           {{ end }}
           <p>{{ .paragraph }}</p>
         </div>
@@ -41,7 +41,7 @@
     {{ end }} {{ end }} {{ if $data.about.section_3 }} {{ with
     $data.about.section_3 }}
     <section class="section_list">
-      <h2>{{ .title }}</h2>
+      <h2 class="h2">{{ .title }}</h2>
 
       <div class="list__wrap">
         {{ range .items }}
