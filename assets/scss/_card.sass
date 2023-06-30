@@ -45,7 +45,11 @@
         +flex(flex, center, flex-start, wrap)
         
         +maw($md)
+            height: auto
             +ft(12, 12*1.4, 400)
+
+        +maw($xs)
+            +ft(10, 10*1.4, 400)
             
 
     &__img
@@ -69,6 +73,9 @@
         +ft(16, 25, 600, $ffText2)
         margin-top: 16px
         margin-bottom: 30px
+
+    &__text
+        margin-top: 16px
 
     &__list
         margin: 0

@@ -15,7 +15,7 @@ const swiper = new Swiper(".swiper-blogs", {
       520: {
         slidesPerView: 1.5,
       },
-      992: {
+      840: {
         slidesPerView: 2,
       },
       1200: {
@@ -35,7 +35,7 @@ const swiper_services = new Swiper(".swiper-services", {
 
     breakpoints: {
       0: {
-        slidesPerView: 1,
+        slidesPerView: 1.3,
       },
       520: {
         slidesPerView: 1.5,
@@ -50,4 +50,24 @@ const swiper_services = new Swiper(".swiper-services", {
         slidesPerView: 3.5,
       },
     },
+});
+
+
+// MENU toggle
+
+const menu_toggle = document.querySelector('.navbar__toggler');
+
+const menu = document.querySelector('.navbar-collapse');
+
+menu_toggle.addEventListener('click', function(){
+    menu.classList.toggle('show');
+    this.classList.toggle('active');
+});
+
+document.addEventListener('click', function(event) {
+    const target = event.target;
+    
+    if (!menu.contains(target) && !menu_toggle.contains(target)) {
+      menu.classList.remove('show');
+    }
 });

@@ -53,10 +53,6 @@ section_cta:
   sub_title: 'Заполните анкету, чтобы получить подробный ответ'
 
 
-
-
-
-
 section_services:
   enable: true
   title: Our services
@@ -117,9 +113,3 @@ section_contacts:
   title: Contacts
   sub_title: 'Contact us'
 
-section_blog:
-  enable: true
-  title: Blog
-  btn:
-    title: "see all"
-    link: "/blog"

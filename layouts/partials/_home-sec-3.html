@@ -6,9 +6,7 @@
 
 <section class="section section_3" id="benefits">
     <div class="container">
-            <h2 class="">
-                {{ .title }}
-            </h2>
+            {{- partial "_hgroup.html" . -}}
             <div class="benefits__wrap">
                 {{ range .items }} 
                     <figure class="benefits">
